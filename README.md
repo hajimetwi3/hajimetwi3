@@ -4,4 +4,5 @@
 ---
 "ついはじめ" = "I accidentally started it"  
  (つい="unintentionally" + はじめ="start")     
-  \* Japanese pun mastery
+  \* Japanese pun mastery  
+---  

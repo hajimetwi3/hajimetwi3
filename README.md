@@ -1,5 +1,5 @@
   
-## Inventor of Post Engineering for AI  
+## Inventor of Post Engineering for AI (PE4AI)  
 
 ---
 "ついはじめ" = "I accidentally started it"  

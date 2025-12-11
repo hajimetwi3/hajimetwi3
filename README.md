@@ -1,5 +1,5 @@
   
-## Inventor of Post Engineering  
+## Inventor of Post Engineering for AI  
 
 ---
 "ついはじめ" = "I accidentally started it"  

@@ -1,4 +1,4 @@
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.17896137.svg)](https://doi.org/10.5281/zenodo.17896137)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.17896136.svg)](https://doi.org/10.5281/zenodo.17896136)
 
 ## Bio  
    Benevolent Influence Research — Founder  

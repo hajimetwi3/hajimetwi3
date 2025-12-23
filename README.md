@@ -4,11 +4,15 @@
 ## Bio  
    Benevolent Influence Research — Founder  
    Inventor of Post Engineering for AI (PE4AI)  
+   Researcher / Engineer  
+   &nbsp;&nbsp; (AI, Cyber Security, Software, Infrastructure)
 
----
+---  
+
 "ついはじめ" = "I accidentally started it"  
  (つい="unintentionally" + はじめ="start")     
   \* Japanese pun mastery  
+  
 ---  
 
   

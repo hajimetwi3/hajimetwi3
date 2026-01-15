@@ -1,0 +1,46 @@
+{%- assign u = page.url | default: "" -%}
+{%- assign is_home = (u == "/" or u == "/index.html") -%}
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "{{ '/' | absolute_url }}#webpage",
+      "url": "{{ '/' | absolute_url }}",
+      "name": "{{ page.title | default: site.title | escape }}",
+      "description": "{{ page.excerpt | strip_html | strip_newlines | truncate: 160 | default: site.description | escape }}"
+    },
+    {
+      "@type": "Person",
+      "@id": {{ ("/" | absolute_url | append: "#person") | jsonify }},
+      "name": {{ "Hajime Tsui" | jsonify }},
+      "url": {{ ("/" | absolute_url) | jsonify }},
+      "jobTitle": {{ "Researcher / Engineer" | jsonify }},
+      "description": {{ "Founder of Benevolent Influence Research. Proposer of Post Engineering for AI (PE4AI)." | jsonify }},
+      "sameAs": [
+        {{ "https://github.com/hajimetwi3" | jsonify }},
+        {{ "https://x.com/hajimetwi3" | jsonify }},
+        {{ "https://zenodo.org/communities/benevolent-influence/" | jsonify }},
+        {{ "https://www.reddit.com/r/OpenLLMSymposium/" | jsonify }}
+      ],
+      "affiliation": { "@id": {{ ("/" | absolute_url | append: "#org") | jsonify }} }, 
+      "knowsAbout": [
+        {{ "Post Engineering for AI (PE4AI)" | jsonify }},
+        {{ "Context Engineering" | jsonify }},
+        {{ "LLM Debiasing" | jsonify }},
+        {{ "AGI Systems" | jsonify }},
+        {{ "Cyber Security" | jsonify }}
+      ]
+    },
+    {
+      "@type": "Organization",
+      "@id": {{ ("/" | absolute_url | append: "#org") | jsonify }},
+      "name": {{ "Benevolent Influence Research" | jsonify }},
+      "url": {{ "https://zenodo.org/communities/benevolent-influence/" | jsonify }}
+    }
+  ]
+}
+</script>
+{%- endif -%}

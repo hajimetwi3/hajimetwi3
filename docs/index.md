@@ -1,0 +1,34 @@
+---
+title: Hajime Tsui - Researcher / Engineer  
+---  
+
+## Hajime Tsui - Researcher / Engineer  
+
+## About  
+- Founder of Benevolent Influence Research.  
+- Inventor of Post Engineering for AI (PE4AI).  
+- Researcher / Engineer  
+   &nbsp;&nbsp;(AI, Cyber Security, Software, Infrastructure)  
+
+## Research  
+- Post Engineering for AI (PE4AI)  
+- Context Engineering  
+- LLM Debiasing  
+- AGI Systems  
+- Cyber Security  
+  
+## Publications  
+- [Post Engineering for AI (PE4AI)](https://doi.org/10.5281/zenodo.17896136)  
+- [Design Notes on Memory, Context, Orchestration, and Self-Directed Evolution in AI and AGI Systems](https://doi.org/10.5281/zenodo.18236772)  
+- [Meta Attacks for AI: Human and AI Reviewers Under Attack](https://doi.org/10.5281/zenodo.18248787)  
+- [Hello seed (Japanese version)](https://doi.org/10.5281/zenodo.18088196)  
+- [Hello seed (English version)](https://doi.org/10.5281/zenodo.18089594)  
+
+## Community  
+- [Benevolent Influence Research](https://zenodo.org/communities/benevolent-influence/)  
+- [Reddit: r/OpenLLMSymposium](https://www.reddit.com/r/OpenLLMSymposium/)  
+- [Zenodo](https://zenodo.org/search?q=metadata.creators.person_or_org.name%3A%22Tsui%2C%20Hajime%22&l=list&p=1&s=10&sort=bestmatch)  
+- [GitHub: https://github.com/hajimetwi3](https://github.com/hajimetwi3)  
+- [X: https://x.com/hajimetwi3](https://x.com/hajimetwi3)
+
+  

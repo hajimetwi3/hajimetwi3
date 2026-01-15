@@ -1,0 +1,124 @@
+/* デフォルトはダーク */
+:root {
+  --bg: #0d1117;
+  --text: #e6edf3;
+  --link: #58a6ff;
+}
+
+html, body {
+  background-color: var(--bg);
+  color: var(--text);
+}
+
+/* Markdown body (GitHub Pages theme override) */
+.markdown-body,
+.page-content {
+  color: var(--text);
+}
+
+/* Headings */
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4 {
+  color: #f0f6fc;
+}
+
+/* Links */
+.markdown-body a {
+  color: var(--link);
+}
+
+.markdown-body a:visited {
+  color: #a3adb8;
+}
+
+/* === Code blocks (Rouge / GitHub Pages) === */
+
+/* ブロック全体（Rouge） */
+.highlight,
+div.highlight,
+pre.highlight {
+  background-color: #161b22;
+  color: #e6edf3;
+}
+
+/* pre内のcode（Rouge） */
+.highlight pre,
+.highlight code,
+pre.highlight code {
+  background-color: transparent;
+  color: #e6edf3;
+}
+
+/* 余白・角丸（見栄え） */
+.highlight pre,
+pre.highlight {
+  padding: 16px;
+  border-radius: 6px;
+  overflow: auto;
+  margin: 0.8em 0;
+}
+
+/* インラインコード（本文中の `code`）だけ別扱い */
+.markdown-body p code,
+.markdown-body li code,
+.markdown-body td code {
+  background-color: #161b22;
+  color: #e6edf3;
+  padding: 0.2em 0.4em;
+  border-radius: 6px;
+}
+
+/* === Fix white code blocks only (keep red .highlight.gd) === */
+.markdown-body .highlight:not(.gd),
+.markdown-body .highlight:not(.gd) pre,
+.markdown-body .highlight:not(.gd) code {
+  background-color: #1b222c;
+  color: #e6edf3;
+}
+
+/* Code block separation */
+.markdown-body .highlight pre,
+.markdown-body pre.highlight {
+  border: 1px solid #30363d;
+}
+
+/* === Blockquote (make slightly brighter, GitHub-dark-like) === */
+.markdown-body blockquote {
+  color: #e6edf3;              /* 本文と同じ or ほぼ同じ */
+}
+
+.markdown-body blockquote p {
+  color: inherit;
+}
+
+
+/* === Light mode (respect OS preference) === */
+@media (prefers-color-scheme: light) {
+  :root {
+    --bg: #ffffff;
+    --text: #24292f;
+    --link: #0969da;
+  }
+  
+  .markdown-body h1,
+  .markdown-body h2,
+  .markdown-body h3,
+  .markdown-body h4 {
+    color: #24292f; /* ライト用（GitHubの本文黒） */
+  }
+  
+  .markdown-body blockquote {
+    color: #24292f;   /* ライト本文と同じ */
+  }
+  
+  .markdown-body blockquote p {
+    color: inherit;
+  }
+
+  .markdown-body,
+  .page-content {
+    color: var(--text);
+  }
+}

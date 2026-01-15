@@ -26,7 +26,8 @@ title: Hajime Tsui - Researcher / Engineer
   
 ## Project Pages  
 - [Post Engineering for AI (PE4AI)](https://hajimetwi3.github.io/post-engineering/)  
-- [Meta Attacks for AI: Human and AI Reviewers Under Attack](https://hajimetwi3.github.io/Meta-Attacks-for-AI/)  
+- [Meta Attacks for AI: Human and AI Reviewers Under Attack](https://hajimetwi3.github.io/Meta-Attacks-for-AI/)
+- [Design Notes on Memory, Context, Orchestration, and Self-Directed Evolution in AI and AGI Systems](https://hajimetwi3.github.io/AGI-Systems/)  
 - [Hello seed (Essay)](https://hajimetwi3.github.io/post-engineering/docs/ideas/hello-seed.html)  
   
 ## Community  

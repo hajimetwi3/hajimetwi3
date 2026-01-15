@@ -1,0 +1,8 @@
+{%- comment -%} ===== OGP image (manual, stable) ===== {%- endcomment -%}
+{%- assign ogimg = page.image | default: '/images/yasai_2_eyes.png' -%}
+<meta property="og:image" content="{{ ogimg | absolute_url }}">
+<meta name="twitter:image" content="{{ ogimg | absolute_url }}">
+
+{% include schema-extra.html %}
+
+<!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "219971a8b25d4506877afc0a72110eb1"}'></script><!-- End Cloudflare Web Analytics -->

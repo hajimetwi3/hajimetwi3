@@ -1,6 +1,6 @@
 {%- assign u = page.url | default: "" -%}
-{%- assign is_home = (u == "/" or u == "/index.html") -%}
 
+{%- if u == "/" or u == "/index.html" -%}
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",

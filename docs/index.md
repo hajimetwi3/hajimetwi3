@@ -23,7 +23,12 @@ title: Hajime Tsui - Researcher / Engineer
 - [Meta Attacks for AI: Human and AI Reviewers Under Attack](https://doi.org/10.5281/zenodo.18248787)  
 - [Hello seed (Japanese version)](https://doi.org/10.5281/zenodo.18088196)  
 - [Hello seed (English version)](https://doi.org/10.5281/zenodo.18089594)  
-
+  
+## Project Pages  
+- [Post Engineering for AI (PE4AI)](https://hajimetwi3.github.io/post-engineering/)  
+- [Meta Attacks for AI: Human and AI Reviewers Under Attack](https://hajimetwi3.github.io/Meta-Attacks-for-AI/)  
+- [Hello seed (Essay)](https://hajimetwi3.github.io/post-engineering/docs/ideas/hello-seed.html)  
+  
 ## Community  
 - [Benevolent Influence Research](https://zenodo.org/communities/benevolent-influence/)  
 - [Reddit: r/OpenLLMSymposium](https://www.reddit.com/r/OpenLLMSymposium/)  

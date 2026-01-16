@@ -36,5 +36,6 @@ title: Hajime Tsui - Researcher / Engineer
 - [Zenodo](https://zenodo.org/search?q=metadata.creators.person_or_org.name%3A%22Tsui%2C%20Hajime%22&l=list&p=1&s=10&sort=bestmatch)  
 - [GitHub: https://github.com/hajimetwi3](https://github.com/hajimetwi3)  
 - [X: https://x.com/hajimetwi3](https://x.com/hajimetwi3)
+- [Instagram: https://www.instagram.com/hajimetwi3/](https://www.instagram.com/hajimetwi3/)  
 
   

@@ -32,10 +32,9 @@ title: Hajime Tsui - Researcher / Engineer
   
 ## Community  
 - [Benevolent Influence Research](https://zenodo.org/communities/benevolent-influence/)  
-- [Reddit: r/OpenLLMSymposium](https://www.reddit.com/r/OpenLLMSymposium/)  
+- Reddit: [r/OpenLLMSymposium](https://www.reddit.com/r/OpenLLMSymposium/)  
 - [Zenodo](https://zenodo.org/search?q=metadata.creators.person_or_org.name%3A%22Tsui%2C%20Hajime%22&l=list&p=1&s=10&sort=bestmatch)  
-- [GitHub: https://github.com/hajimetwi3](https://github.com/hajimetwi3)  
-- [X: https://x.com/hajimetwi3](https://x.com/hajimetwi3)
-- [Instagram: https://www.instagram.com/hajimetwi3/](https://www.instagram.com/hajimetwi3/)  
-
-  
+- GitHub: [https://github.com/hajimetwi3](https://github.com/hajimetwi3)  
+- X: [https://x.com/hajimetwi3](https://x.com/hajimetwi3)
+- Instagram: [https://www.instagram.com/hajimetwi3/](https://www.instagram.com/hajimetwi3/)  
+- BlueSky: [https://bsky.app/profile/hajimetwi3.bsky.social](https://bsky.app/profile/hajimetwi3.bsky.social)  

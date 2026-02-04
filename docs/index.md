@@ -22,7 +22,8 @@ title: Hajime Tsui - Researcher / Engineer
 - [Design Notes on Memory, Context, Orchestration, and Self-Directed Evolution in AI and AGI Systems](https://doi.org/10.5281/zenodo.18236772)  
 - [Meta Attacks for AI: Human and AI Reviewers Under Attack](https://doi.org/10.5281/zenodo.18248787)  
 - [Hello seed (Japanese version)](https://doi.org/10.5281/zenodo.18088196)  
-- [Hello seed (English version)](https://doi.org/10.5281/zenodo.18089594)  
+- [Hello seed (English version)](https://doi.org/10.5281/zenodo.18089594)
+- [Later seeds (Japanese version)](https://doi.org/10.5281/zenodo.18468538)  
   
 ## Project Pages  
 - [Post Engineering for AI (PE4AI)](https://hajimetwi3.github.io/post-engineering/)  

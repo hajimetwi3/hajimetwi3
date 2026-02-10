@@ -32,6 +32,7 @@ title: Hajime Tsui - Researcher / Engineer
 - [Hello seed (Essay)](https://hajimetwi3.github.io/post-engineering/docs/ideas/hello-seed.html)  
   
 ## Community  
+- ORCID: [https://orcid.org/0009-0001-3050-1725](https://orcid.org/0009-0001-3050-1725)  
 - [Benevolent Influence Research](https://zenodo.org/communities/benevolent-influence/)  
 - Reddit: [r/OpenLLMSymposium](https://www.reddit.com/r/OpenLLMSymposium/)  
 - [Zenodo](https://zenodo.org/search?q=metadata.creators.person_or_org.name%3A%22Tsui%2C%20Hajime%22&l=list&p=1&s=10&sort=bestmatch)  

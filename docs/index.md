@@ -40,3 +40,7 @@ title: Hajime Tsui - Researcher / Engineer
 - X: [https://x.com/hajimetwi3](https://x.com/hajimetwi3)
 - Instagram: [https://www.instagram.com/hajimetwi3/](https://www.instagram.com/hajimetwi3/)  
 - BlueSky: [https://bsky.app/profile/hajimetwi3.bsky.social](https://bsky.app/profile/hajimetwi3.bsky.social)  
+  
+---  
+
+<img src="images/ORCID.png" width="120" alt="https://orcid.org/0009-0001-3050-1725">  

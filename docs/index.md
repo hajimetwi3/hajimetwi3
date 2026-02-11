@@ -27,15 +27,16 @@ title: Hajime Tsui - Researcher / Engineer
   
 ## Project Pages  
 - [Post Engineering for AI (PE4AI)](https://hajimetwi3.github.io/post-engineering/)  
-- [Meta Attacks for AI: Human and AI Reviewers Under Attack](https://hajimetwi3.github.io/Meta-Attacks-for-AI/)
+- [Meta Attacks for AI: Human and AI Reviewers Under Attack](https://hajimetwi3.github.io/Meta-Attacks-for-AI/)  
 - [Design Notes on Memory, Context, Orchestration, and Self-Directed Evolution in AI and AGI Systems](https://hajimetwi3.github.io/AGI-Systems/)  
 - [Hello seed (Essay)](https://hajimetwi3.github.io/post-engineering/docs/ideas/hello-seed.html)  
+- [Veggie Juice Engineering?](https://hajimetwi3.github.io/veggie-juice-engineering/)  
   
 ## Community  
-- ORCID: [https://orcid.org/0009-0001-3050-1725](https://orcid.org/0009-0001-3050-1725)  
+- ORCID: [0009-0001-3050-1725](https://orcid.org/0009-0001-3050-1725)  
 - [Benevolent Influence Research](https://zenodo.org/communities/benevolent-influence/)  
 - Reddit: [r/OpenLLMSymposium](https://www.reddit.com/r/OpenLLMSymposium/)  
-- [Zenodo](https://zenodo.org/search?q=metadata.creators.person_or_org.name%3A%22Tsui%2C%20Hajime%22&l=list&p=1&s=10&sort=bestmatch)  
+- Zenodo: [Records](https://zenodo.org/search?q=metadata.creators.person_or_org.name%3A%22Tsui%2C%20Hajime%22&l=list&p=1&s=10&sort=bestmatch)  
 - GitHub: [https://github.com/hajimetwi3](https://github.com/hajimetwi3)  
 - X: [https://x.com/hajimetwi3](https://x.com/hajimetwi3)
 - Instagram: [https://www.instagram.com/hajimetwi3/](https://www.instagram.com/hajimetwi3/)  

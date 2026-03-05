@@ -31,7 +31,8 @@ title: Hajime Tsui - Researcher / Engineer
 - [Meta Attacks for AI: Human and AI Reviewers Under Attack](https://hajimetwi3.github.io/Meta-Attacks-for-AI/)  
 - [Design Notes on Memory, Context, Orchestration, and Self-Directed Evolution in AI and AGI Systems](https://hajimetwi3.github.io/AGI-Systems/)  
 - [Hello seed (Essay)](https://hajimetwi3.github.io/post-engineering/docs/ideas/hello-seed.html)  
-- [Veggie Juice Engineering?](https://hajimetwi3.github.io/veggie-juice-engineering/)  
+- [Veggie Juice Engineering?](https://hajimetwi3.github.io/veggie-juice-engineering/)
+- [https://hajimetwi3.github.io/misc/CyberSocial/TelephonePollPoisoning/](https://hajimetwi3.github.io/misc/CyberSocial/TelephonePollPoisoning/)  
   
 ## Community  
 - ORCID: [0009-0001-3050-1725](https://orcid.org/0009-0001-3050-1725)  

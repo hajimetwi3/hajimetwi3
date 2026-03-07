@@ -14,6 +14,8 @@
   [Meta Attacks for AI: Human and AI Reviewers Under Attack](https://doi.org/10.5281/zenodo.18248787)  
   [Hello seed (Japanese version)](https://doi.org/10.5281/zenodo.18088196)  
   [Hello seed (English version)](https://doi.org/10.5281/zenodo.18089594)  
+  [Later seeds (Japanese version)](https://doi.org/10.5281/zenodo.18468538)  
+  [Telephone Poll Poisoning via Mass Voice SIMs: Emerging Threats to Public Opinion Research](https://doi.org/10.5281/zenodo.18817302)  
 
 ---  
 

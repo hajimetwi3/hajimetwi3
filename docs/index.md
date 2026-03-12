@@ -32,7 +32,8 @@ title: Hajime Tsui - Researcher / Engineer
 - [Design Notes on Memory, Context, Orchestration, and Self-Directed Evolution in AI and AGI Systems](https://hajimetwi3.github.io/AGI-Systems/)  
 - [Hello seed (Essay)](https://hajimetwi3.github.io/post-engineering/docs/ideas/hello-seed.html)  
 - [Veggie Juice Engineering?](https://hajimetwi3.github.io/veggie-juice-engineering/)
-- [Telephone Poll Poisoning via Mass Voice SIMs: Emerging Threats to Public Opinion Research](https://hajimetwi3.github.io/misc/CyberSocial/TelephonePollPoisoning/)  
+- [Telephone Poll Poisoning via Mass Voice SIMs: Emerging Threats to Public Opinion Research](https://hajimetwi3.github.io/misc/CyberSocial/TelephonePollPoisoning/)
+- [Hijacking AI Agents: Enticement Attacks on Autonomous Systems Using AI Breakout as Bait](https://hajimetwi3.github.io/misc/AI/HijackingAIAgents/)  
   
 ## Community  
 - ORCID: [0009-0001-3050-1725](https://orcid.org/0009-0001-3050-1725)  

@@ -46,8 +46,8 @@ title: Hajime Tsui - Researcher / Engineer
 - BlueSky: [https://bsky.app/profile/hajimetwi3.bsky.social](https://bsky.app/profile/hajimetwi3.bsky.social)  
 
 ---  
-## Links
-(https://hajimetwi3.github.io/hajimetwi3/links.html](https://hajimetwi3.github.io/hajimetwi3/links.html)  
+## Links  
+[https://hajimetwi3.github.io/hajimetwi3/links.html](https://hajimetwi3.github.io/hajimetwi3/links.html)  
 
 ---  
 

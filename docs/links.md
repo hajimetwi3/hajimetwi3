@@ -1,5 +1,8 @@
 ## Links  
 
+## AI  
+[https://ai.rakuten.co.jp/chat](https://ai.rakuten.co.jp/chat)  
+
 ## Indices  
 [NK2251!](https://jp.tradingview.com/chart/?symbol=NK2251%21)  
 

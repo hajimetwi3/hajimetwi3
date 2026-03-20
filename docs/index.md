@@ -43,7 +43,8 @@ title: Hajime Tsui - Researcher / Engineer
 - GitHub: [https://github.com/hajimetwi3](https://github.com/hajimetwi3)  
 - X: [https://x.com/hajimetwi3](https://x.com/hajimetwi3)
 - Instagram: [https://www.instagram.com/hajimetwi3/](https://www.instagram.com/hajimetwi3/)  
-- BlueSky: [https://bsky.app/profile/hajimetwi3.bsky.social](https://bsky.app/profile/hajimetwi3.bsky.social)  
+- BlueSky: [https://bsky.app/profile/hajimetwi3.bsky.social](https://bsky.app/profile/hajimetwi3.bsky.social)
+- Note: [https://note.com/hajimetwi3](https://note.com/hajimetwi3)  
 
 ---  
 ## Links  

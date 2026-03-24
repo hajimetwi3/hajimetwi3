@@ -2,6 +2,7 @@
 
 ## AI  
 [https://ai.rakuten.co.jp/chat](https://ai.rakuten.co.jp/chat)  
+[https://chat.sakana.ai/](https://chat.sakana.ai/)  
 
 ## Indices  
 [NK2251!](https://jp.tradingview.com/chart/?symbol=NK2251%21)  

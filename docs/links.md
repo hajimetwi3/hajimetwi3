@@ -13,6 +13,8 @@
 ## Commodities  
 [Gold](https://jp.tradingview.com/chart/?symbol=OANDA%3AXAUJPY)  
 [Silver](https://jp.tradingview.com/chart/?symbol=OANDA%3AXAGJPY)  
+[USOIL](https://jp.tradingview.com/chart/?symbol=TVC%3AUSOIL)  
+
 
 ## Archive sites  
 [https://web.archive.org/](https://web.archive.org/)  

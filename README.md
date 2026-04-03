@@ -17,6 +17,7 @@
   [Later seeds (Japanese version)](https://doi.org/10.5281/zenodo.18468538)  
   [Telephone Poll Poisoning via Mass Voice SIMs: Emerging Threats to Public Opinion Research](https://doi.org/10.5281/zenodo.18817302)  
   [Hijacking AI Agents: Enticement Attacks on Autonomous Systems Using AI Breakout as Bait](https://doi.org/10.5281/zenodo.19350905)  
+  [Debias the Debiasing: On the Concept of "Debiasing Debiasing"](https://doi.org/10.5281/zenodo.19311081)  
 
 ---  
 

@@ -25,6 +25,9 @@
 
 ## Tools  
 Visual Studio Code: [https://code.visualstudio.com/](https://code.visualstudio.com/)  
+Git: [https://git-scm.com/](https://git-scm.com/)  
+Node.js: [https://nodejs.org](https://nodejs.org)  
+Docker: [https://www.docker.com/](https://www.docker.com/)  
 
 ## Search  
 [https://www.google.com/](https://www.google.com/)  

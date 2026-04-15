@@ -33,6 +33,13 @@ Docker: [https://www.docker.com/](https://www.docker.com/)
 [https://www.google.com/](https://www.google.com/)  
 [https://www.bing.com/](https://www.bing.com/)  
 
+## Portal and News (JP)  
+[https://www.yahoo.co.jp/](https://www.yahoo.co.jp/)  
+[DIAMOND online](https://diamond.jp/)  
+
+## Portal(US)  
+[https://www.yahoo.com/](https://www.yahoo.com/)  
+
 ## Archive sites  
 [https://web.archive.org/](https://web.archive.org/)  
 [https://ghostarchive.org/](https://ghostarchive.org/)  
@@ -41,5 +48,5 @@ Docker: [https://www.docker.com/](https://www.docker.com/)
 ---  
 
 ## Edit Page  
-https://github.com/hajimetwi3/hajimetwi3/tree/main/docs  
+[https://github.com/hajimetwi3/hajimetwi3/tree/main/docs](https://github.com/hajimetwi3/hajimetwi3/tree/main/docs)  
 

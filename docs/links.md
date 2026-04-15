@@ -24,10 +24,19 @@
 [USOIL](https://jp.tradingview.com/chart/?symbol=TVC%3AUSOIL)  
 
 ## Tools  
-[Visual Studio Code](https://code.visualstudio.com/)  
+Visual Studio Code: [https://code.visualstudio.com/](https://code.visualstudio.com/)  
+
+## Search  
+[https://www.google.com/](https://www.google.com/)  
+[https://www.bing.com/](https://www.bing.com/)  
 
 ## Archive sites  
 [https://web.archive.org/](https://web.archive.org/)  
 [https://ghostarchive.org/](https://ghostarchive.org/)  
 [https://archive.ph/](https://archive.ph/)  
-  
+
+---  
+
+## Edit Page  
+https://github.com/hajimetwi3/hajimetwi3/tree/main/docs  
+

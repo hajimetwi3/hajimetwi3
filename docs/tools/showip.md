@@ -41,7 +41,7 @@ IPアドレス等の情報は表示のためだけに一時的に取得してい
             言語(navigator): ${navigator.language}<br>
             画面: ${screen.width}×${screen.height} (${window.devicePixelRatio}x)<br>
             CPUコア: ${navigator.hardwareConcurrency || 'unknown'}<br>
-            メモリ: ${navigator.deviceMemory ? navigator.deviceMemory + 'GB' : 'unknown'}<br>
+            メモリ(ブラウザ推定値）: ${navigator.deviceMemory ? navigator.deviceMemory + 'GB' : 'unknown'}<br>
     プ      ラットフォーム: ${navigator.platform}
           `;
           btn.textContent = '再度取得する';

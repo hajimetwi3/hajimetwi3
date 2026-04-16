@@ -3,6 +3,8 @@
 <button id="get-ip-btn">IPアドレスを表示する</button>
 
   <p id="ip-address">ボタンを押してください</p>
+  ※このボタンを押すと、外部から認識できる、あなたのIPアドレスを表示します。
+  　IPアドレス等の情報は表示のためだけに一時的に取得しています。なお、別途プラットフォーム側で保存されている可能性はあります。
 
   <script>
     const btn = document.getElementById('get-ip-btn');

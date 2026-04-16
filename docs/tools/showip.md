@@ -74,3 +74,51 @@ IPアドレス等の情報は表示のためだけに一時的に取得してい
         });
     });
   </script>
+
+  ---
+
+## スピードテスト（ダウンロード速度）※cloudflareの機能を使っています。
+
+<button id="speedtest-btn">スピードテストを実行（約10秒）</button>
+
+<div id="speed-result"></div>
+
+<script>
+// === スピードテスト機能（ページ末尾に追加）===
+const speedBtn = document.getElementById('speedtest-btn');
+const speedResult = document.getElementById('speed-result');
+
+speedBtn.addEventListener('click', async () => {
+  speedBtn.disabled = true;
+  speedBtn.textContent = '測定中...（約10秒）';
+  speedResult.style.display = 'block';
+  speedResult.innerHTML = '<strong>測定開始...</strong>';
+
+  // 10MBテストファイル（軽め・実用的）
+  const testUrl = 'https://speed.cloudflare.com/__down?bytes=10000000';
+  const startTime = Date.now();
+
+  try {
+    const response = await fetch(testUrl, { cache: 'no-store' });
+    const blob = await response.blob();
+    const endTime = Date.now();
+
+    const durationSec = (endTime - startTime) / 1000;
+    const sizeMB = blob.size / (1024 * 1024);
+    const speedMbps = (sizeMB / durationSec) * 8;   // Mbps換算
+
+    speedResult.innerHTML = `
+      <strong>ダウンロード速度: ${speedMbps.toFixed(1)} Mbps</strong><br>
+      ファイルサイズ: ${sizeMB.toFixed(1)} MB<br>
+      所要時間: ${durationSec.toFixed(2)} 秒<br>
+      <small>※目安値です。ネットワーク状況やブラウザによって変動します。</small>
+    `;
+  } catch (e) {
+    speedResult.innerHTML = '測定に失敗しました。<br>もう一度試してください。';
+  }
+
+  speedBtn.disabled = false;
+  speedBtn.textContent = 'もう一度スピードテストを実行';
+});
+</script>
+

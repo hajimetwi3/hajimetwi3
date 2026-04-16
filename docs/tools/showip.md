@@ -28,16 +28,30 @@ IPアドレス等の情報は表示のためだけに一時的に取得してい
         .then(data => {
           // === 接続タイプ ===
           let connectionType = 'unknown';
+          
           if (navigator.connection) {
             const conn = navigator.connection;
-            if (conn.type === 'wifi') {
-              connectionType = 'Wi-Fi';
-            } else if (conn.type === 'cellular') {
+          
+            // 1. 明示的なタイプがあれば最優先
+            if (conn.type === 'wifi' || conn.type === 'ethernet') {
+              connectionType = '固定回線 (Wi-Fi / 有線)';
+            } 
+            else if (conn.type === 'cellular') {
               connectionType = 'モバイル回線';
-            } else if (conn.effectiveType) {
-              connectionType = conn.effectiveType.toUpperCase();
-              if (connectionType === '4G' && conn.downlink && conn.downlink > 10) {
+            }
+          
+            // 2. 速度で補正
+            else if (conn.effectiveType) {
+              let type = conn.effectiveType.toUpperCase();
+          
+              if (conn.downlink && conn.downlink >= 25) {
+                connectionType = '高速固定回線 (光回線相当)';
+              } 
+              else if (conn.downlink && conn.downlink >= 10 && type === '4G') {
                 connectionType = '5G相当';
+              } 
+              else {
+                connectionType = type;
               }
             }
           }

@@ -6,7 +6,7 @@
 Click the button above to display information that servers can see about your connection - your IP address, user agent, approximate city, postal code, and so on.
 This information is only fetched for display; it is not stored by this page (though the underlying platform may log requests separately).
 Browser fingerprinting information available via JavaScript is also shown.
-This page only uses a Cloudflare Worker - your data is not sent anywhere suspicious.
+This page only uses a Cloudflare "Worker/icanhazip(IPv4)" - your data is not sent anywhere suspicious.
 
 ### Displayed fields
 IP, Timestamp, ISP, AS number, City / Region, Postal code, Coordinates, Timezone, Referer, X-Forwarded-For, Via, Forwarded, User-Agent, User-Agent (navigator), tlsVersion, httpProtocol, Language, Language (navigator), screen size, window size, devicePixelRatio, CPU cores, Memory (browser estimate), Platform, Connection info
@@ -31,7 +31,12 @@ IP, Timestamp, ISP, AS number, City / Region, Postal code, Coordinates, Timezone
           }
           return r.json();
         })
-        .then(data => {
+        .then(async data => {
+          const ipv4 = await fetch('https://ipv4.icanhazip.com')
+            .then(r => r.ok ? r.text() : Promise.reject())
+            .then(s => s.trim())
+            .catch(() => 'not available');
+          
           let connInfo = 'unknown';
           if (navigator.connection) {
             const c = navigator.connection;
@@ -39,7 +44,8 @@ IP, Timestamp, ISP, AS number, City / Region, Postal code, Coordinates, Timezone
           }
 
           const rows = [
-            ['IP', data.ip],
+            ['IP(Worker:v4 or v6)', data.ip],
+            ['IPv4(icanhazip)', ipv4],
             ['Timestamp', data.timestamp],
             ['ISP', data.isp],
             ['AS number', 'AS' + data.asn],

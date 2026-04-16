@@ -3,14 +3,13 @@
 <button id="get-ip-btn">IPアドレス等の情報を表示する</button>
 
 <p id="ip-address"> </p>
-このボタンを押すと、アクセス先が認識できるあなたのIPアドレス、UA、都市情報、郵便番号等の情報を表示します。
-IPアドレス等の情報は表示のためだけに一時的に取得しています。
-なお、別途プラットフォーム側で保存されている可能性はあります。
-JSで取得できるブラウザフィンガープリントの様な情報も表示しています。  
-Cloudflare運営の「Workerとicanhazip(IPv4情報)」を使ってるだけなので、変な所に情報を送っている訳ではありません。
+・このボタンを押すと、アクセス先が認識できるあなたのIPアドレス、UA、都市情報、郵便番号等の情報を表示します。  
+・取得した情報は表示のためだけに一時的に取得しています。なお、別途プラットフォーム側で保存されている可能性はあります。
+・JSで取得できるブラウザフィンガープリントの様な情報も表示しています。  
+・Cloudflare運営の「Workerとicanhazip(IPv4情報)」を使ってるだけなので、変な所に情報を送ってはいないはずです。
 
 ### 表示情報一覧  
-IP, 取得日時, 事業者, AS番号, 都市, 郵便番号, 位置, タイムゾーン, リファラ, X-Forwarded-For, Via, Forwarded, User-Agent, User-Agent(navigator), tlsVersion, httpProtocol, 言語, 言語(navigator), 画面サイズ, CPUコア数, メモリ(ブラウザ推定値), プラットフォーム, 接続情報  
+IPv4/IPv6, 取得日時, 事業者, AS番号, 都市, 郵便番号, 位置, タイムゾーン, リファラ, X-Forwarded-For, Via, Forwarded, User-Agent, User-Agent(navigator), tlsVersion, httpProtocol, 言語, 言語(navigator), 画面サイズ, CPUコア数, メモリ(ブラウザ推定値), プラットフォーム, 接続情報  
 ※多少異なる可能性はあります。
 
   <script>

@@ -28,7 +28,8 @@
         .then(data => {
           display.innerHTML = `
             IP: <strong>${data.ip}</strong><br>
-            国: ${data.country}
+            国: ${data.country}<br>
+            事業者: ${data.isp}
           `;
           btn.textContent = '再度取得する';
           btn.disabled = false;

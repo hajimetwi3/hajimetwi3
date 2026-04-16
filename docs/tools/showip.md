@@ -34,7 +34,15 @@ IPアドレス等の情報は表示のためだけに一時的に取得してい
             位置: ${data.latitude}, ${data.longitude}<br>
             タイムゾーン: ${data.timezone}<br>
             リファラ: <small>${data.referer}</small><br>
-            ホスト名: ${data.hostname}<br><br>
+            ホスト名: ${data.hostname}<br>
+            User-Agent: ${data.userAgent}<br><br>
+            User-Agent(navigator): ${navigator.userAgent}<br>
+            言語: ${data.acceptLanguage}<br>
+            言語(navigator): ${navigator.language}<br>
+            画面: ${screen.width}×${screen.height} (${window.devicePixelRatio}x)<br>
+            CPUコア: ${navigator.hardwareConcurrency || 'unknown'}<br>
+            メモリ: ${navigator.deviceMemory ? navigator.deviceMemory + 'GB' : 'unknown'}<br>
+    プ      ラットフォーム: ${navigator.platform}
           `;
           btn.textContent = '再度取得する';
           btn.disabled = false;

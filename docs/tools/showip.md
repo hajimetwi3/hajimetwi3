@@ -139,3 +139,8 @@ speedBtn.addEventListener('click', async () => {
 });
 </script>
 
+---  
+## 詳細情報  
+本ページの具体的な実装は以下で確認可能です。  
+[https://github.com/hajimetwi3/hajimetwi3/blob/main/docs/tools/showip.md?plain=1](https://github.com/hajimetwi3/hajimetwi3/blob/main/docs/tools/showip.md?plain=1)  
+

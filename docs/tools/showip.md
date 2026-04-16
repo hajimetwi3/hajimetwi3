@@ -26,38 +26,19 @@ IPアドレス等の情報は表示のためだけに一時的に取得してい
           return r.json();
         })
         .then(data => {
-          // === 接続タイプ ===
-          let connectionType = 'unknown';
-          
-          if (navigator.connection) {
-            const conn = navigator.connection;
-          
-            // 1. 明示的なタイプがあれば最優先
-            if (conn.type === 'wifi' || conn.type === 'ethernet') {
-              connectionType = '固定回線 (Wi-Fi / 有線)';
-            } 
-            else if (conn.type === 'cellular') {
-              connectionType = 'モバイル回線';
-            }
-          
-            // 2. 速度で補正
-            else if (conn.effectiveType) {
-              let type = conn.effectiveType.toUpperCase();
-          
-              if (conn.downlink && conn.downlink >= 25) {
-                connectionType = '高速固定回線 (光回線相当)';
-              } 
-              else if (conn.downlink && conn.downlink >= 10 && type === '4G') {
-                connectionType = '5G相当';
-              } 
-              else {
-                connectionType = type;
-              }
-            }
+        // === 接続情報===
+        let connInfo = 'unknown';
+        if (navigator.connection) {
+          const c = navigator.connection;
+          connInfo = `
+            effectiveType: ${c.effectiveType || 'unknown'} 
+            downlink: ${c.downlink || 'unknown'} Mbps 
+            type: ${c.type || 'unknown'} 
+            rtt: ${c.rtt || 'unknown'} ms`;
           }
           display.innerHTML = `
             IP: <strong>${data.ip}</strong><br>
-            接続タイプ: ${connectionType}<br>
+
             取得日時: ${data.timestamp}<br>
             事業者: ${data.isp}<br>
             AS番号: AS${data.asn}<br>
@@ -74,7 +55,8 @@ IPアドレス等の情報は表示のためだけに一時的に取得してい
             画面: ${screen.width}×${screen.height} (${window.devicePixelRatio}x)<br>
             CPUコア: ${navigator.hardwareConcurrency || 'unknown'}<br>
             メモリ(ブラウザ推定値）: ${navigator.deviceMemory ? navigator.deviceMemory + 'GB' : 'unknown'}<br>
-    プ      ラットフォーム: ${navigator.platform}
+            プラットフォーム: ${navigator.platform}<br>
+            接続情報: ${connInfo}<br>
           `;
           btn.textContent = '再度取得する';
           btn.disabled = false;

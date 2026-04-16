@@ -46,7 +46,7 @@ Docker: [https://www.docker.com/](https://www.docker.com/)
 [https://archive.ph/](https://archive.ph/)  
 
 ## WebTools  
-[IP check](https://hajimetwi3.github.io/hajimetwi3/tools/showip.html)  
+[IP check/DL Speed Test](https://hajimetwi3.github.io/hajimetwi3/tools/showip.html)  
 
 ---  
 

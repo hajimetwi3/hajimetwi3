@@ -10,7 +10,7 @@ JSで取得できるブラウザフィンガープリントの様な情報も表
 CloudflareのWorkerを使ってるだけなので、変な所に情報を送っている訳ではありません。
 
 ### 表示情報一覧  
-IP, 取得日時, 事業者, AS番号, 都市, 郵便番号, 位置, タイムゾーン, リファラ, ホスト名, X-Forwarded-For, Via, Forwarded, User-Agent, User-Agent(navigator), tlsVersion, httpProtocol, 言語, 言語(navigator), 画面, CPUコア, メモリ(ブラウザ推定値), プラットフォーム, 接続情報  
+IP, 取得日時, 事業者, AS番号, 都市, 郵便番号, 位置, タイムゾーン, リファラ, X-Forwarded-For, Via, Forwarded, User-Agent, User-Agent(navigator), tlsVersion, httpProtocol, 言語, 言語(navigator), 画面, CPUコア, メモリ(ブラウザ推定値), プラットフォーム, 接続情報  
 ※多少異なる可能性はあります。
 
   <script>

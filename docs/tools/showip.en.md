@@ -3,10 +3,10 @@
 <button id="get-ip-btn">Show my IP and browser info</button>
 
 <p id="ip-address"> </p>
-Click the button above to display information that servers can see about your connection ? your IP address, user agent, approximate city, postal code, and so on.
+Click the button above to display information that servers can see about your connection - your IP address, user agent, approximate city, postal code, and so on.
 This information is only fetched for display; it is not stored by this page (though the underlying platform may log requests separately).
 Browser fingerprinting information available via JavaScript is also shown.
-This page only uses a Cloudflare Worker ? your data is not sent anywhere suspicious.
+This page only uses a Cloudflare Worker - your data is not sent anywhere suspicious.
 
 ### Displayed fields
 IP, Timestamp, ISP, AS number, City / Region, Postal code, Coordinates, Timezone, Referer, X-Forwarded-For, Via, Forwarded, User-Agent, User-Agent (navigator), tlsVersion, httpProtocol, Language, Language (navigator), screen size, window size, devicePixelRatio, CPU cores, Memory (browser estimate), Platform, Connection info

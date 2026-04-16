@@ -29,7 +29,8 @@
           display.innerHTML = `
             IP: <strong>${data.ip}</strong><br>
             国: ${data.country}<br>
-            事業者: ${data.isp}
+            事業者: ${data.isp}<br>
+            都市: ${data.city} / ${data.isp}
           `;
           btn.textContent = '再度取得する';
           btn.disabled = false;

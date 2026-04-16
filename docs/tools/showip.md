@@ -50,6 +50,8 @@ IPアドレス等の情報は表示のためだけに一時的に取得してい
             ホスト名: ${data.hostname}<br>
             User-Agent: ${data.userAgent}<br><br>
             User-Agent(navigator): ${navigator.userAgent}<br>
+            tlsVersion: ${data.tlsVersion}<br>
+            httpProtocol: ${data.httpProtocol}<br>
             言語: ${data.acceptLanguage}<br>
             言語(navigator): ${navigator.language}<br>
             画面: ${screen.width}×${screen.height} (${window.devicePixelRatio}x)<br>

@@ -48,6 +48,9 @@ IPアドレス等の情報は表示のためだけに一時的に取得してい
             タイムゾーン: ${data.timezone}<br>
             リファラ: <small>${data.referer}</small><br>
             ホスト名: ${data.hostname}<br>
+            X-Forwarded-For: ${data.xForwardedFor}<br>
+            Via: ${data.via}<br>
+            Forwarded: ${data.forwarded}<br>
             User-Agent: ${data.userAgent}<br><br>
             User-Agent(navigator): ${navigator.userAgent}<br>
             tlsVersion: ${data.tlsVersion}<br>

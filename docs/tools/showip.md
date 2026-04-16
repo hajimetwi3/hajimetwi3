@@ -26,9 +26,27 @@ IPアドレス等の情報は表示のためだけに一時的に取得してい
           return r.json();
         })
         .then(data => {
+          // === 接続タイプ ===
+          let connectionType = 'unknown';
+          if (navigator.connection) {
+            const conn = navigator.connection;
+            if (conn.type === 'wifi') {
+              connectionType = 'Wi-Fi';
+            } else if (conn.type === 'cellular') {
+              connectionType = 'モバイル回線';
+            } else if (conn.effectiveType) {
+              connectionType = conn.effectiveType.toUpperCase();
+              if (connectionType === '4G' && conn.downlink && conn.downlink > 10) {
+                connectionType = '5G相当';
+              }
+            }
+          }
           display.innerHTML = `
             IP: <strong>${data.ip}</strong><br>
+            接続タイプ: ${connectionType}<br>
+            取得日時: ${data.timestamp}<br>
             事業者: ${data.isp}<br>
+            AS番号: AS${data.asn}<br>
             都市: ${data.city} / ${data.region}<br>
             郵便番号: ${data.postalCode}<br>
             位置: ${data.latitude}, ${data.longitude}<br>

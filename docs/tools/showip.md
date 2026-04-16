@@ -1,10 +1,10 @@
-## あなたのIPアドレス
+## あなたのIPアドレスの情報を表示する
   
-<button id="get-ip-btn">IPアドレスを表示する</button>
+<button id="get-ip-btn">IPアドレス等を表示する</button>
 
-  <p id="ip-address">ボタンを押してください</p>
-  ※このボタンを押すと、外部から認識できる、あなたのIPアドレス、UA、都市情報等の情報を表示します。
-  　IPアドレス等の情報は表示のためだけに一時的に取得しています。なお、別途プラットフォーム側で保存されている可能性はあります。
+<p id="ip-address">ボタンを押してください</p>
+※このボタンを押すと、外部から認識できる、あなたのIPアドレス、UA、都市情報、郵便番号等の情報を表示します。
+IPアドレス等の情報は表示のためだけに一時的に取得しています。なお、別途プラットフォーム側で保存されている可能性はあります。
 
   <script>
     const btn = document.getElementById('get-ip-btn');
@@ -28,10 +28,13 @@
         .then(data => {
           display.innerHTML = `
             IP: <strong>${data.ip}</strong><br>
-            UA: ${data.userAgent}<br>
-            国: ${data.country}<br>
             事業者: ${data.isp}<br>
-            都市: ${data.city} / ${data.region}
+            都市: ${data.city} / ${data.region}<br>
+            郵便番号: ${data.postalCode}<br>
+            位置: ${data.latitude}, ${data.longitude}<br>
+            タイムゾーン: ${data.timezone}<br>
+            リファラ: <small>${data.referer}</small><br>
+            ホスト名: ${data.hostname}<br><br>
           `;
           btn.textContent = '再度取得する';
           btn.disabled = false;

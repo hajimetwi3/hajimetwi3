@@ -35,7 +35,10 @@ title: Hajime Tsui - Researcher / Engineer
 - [Hello seed (Essay)](https://hajimetwi3.github.io/post-engineering/docs/ideas/hello-seed.html)  
 - [Veggie Juice Engineering?](https://hajimetwi3.github.io/veggie-juice-engineering/)
 - [Telephone Poll Poisoning via Mass Voice SIMs: Emerging Threats to Public Opinion Research](https://hajimetwi3.github.io/misc/CyberSocial/TelephonePollPoisoning/)
-- [Hijacking AI Agents: Enticement Attacks on Autonomous Systems Using AI Breakout as Bait](https://hajimetwi3.github.io/misc/AI/HijackingAIAgents/)  
+- [Hijacking AI Agents: Enticement Attacks on Autonomous Systems Using AI Breakout as Bait](https://hajimetwi3.github.io/misc/AI/HijackingAIAgents/)
+
+## Tools  
+- [Yatta?](https://hajimetwi3.github.io/misc/tools/yatta/)  
   
 ## Community  
 - ORCID: [0009-0001-3050-1725](https://orcid.org/0009-0001-3050-1725)  

@@ -19,6 +19,9 @@
   [Hijacking AI Agents: Enticement Attacks on Autonomous Systems Using AI Breakout as Bait](https://doi.org/10.5281/zenodo.19350905)  
   [Debias the Debiasing: On the Concept of "Debiasing Debiasing"](https://doi.org/10.5281/zenodo.19311081)  
 
+## Tools  
+  [Yatta?](https://hajimetwi3.github.io/misc/tools/yatta/)  
+  
 ---  
 
 "ついはじめ" = "I accidentally started it"  

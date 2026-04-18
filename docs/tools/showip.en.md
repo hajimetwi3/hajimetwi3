@@ -146,4 +146,9 @@ speedBtn.addEventListener('click', async () => {
 ---
 ## Details
 The source of this page is available here:
-[https://github.com/hajimetwi3/hajimetwi3/blob/main/docs/tools/showip.en.md?plain=1](https://github.com/hajimetwi3/hajimetwi3/blob/main/docs/tools/showip.en.md?plain=1)
+[https://github.com/hajimetwi3/hajimetwi3/blob/main/docs/tools/showip.en.md?plain=1](https://github.com/hajimetwi3/hajimetwi3/blob/main/docs/tools/showip.en.md?plain=1)  
+
+---  
+## Disclaimer  
+
+This service is provided "as is," with no guarantee of operation. The creator assumes no responsibility for any damages caused by its use.   Please use it at your own risk.  

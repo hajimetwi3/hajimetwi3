@@ -152,3 +152,14 @@ The source of this page is available here:
 ## Disclaimer  
 
 This service is provided "as is," with no guarantee of operation. The creator assumes no responsibility for any damages caused by its use.   Please use it at your own risk.  
+
+---  
+## Author  
+  
+Written by Hajime Tsui  
+- GitHubPage: [https://hajimetwi3.github.io/hajimetwi3/](https://hajimetwi3.github.io/hajimetwi3/)  
+- GitHub: [https://github.com/hajimetwi3](https://github.com/hajimetwi3)  
+- X (Twitter): [https://x.com/hajimetwi3](https://x.com/hajimetwi3)  
+- Reddit: [https://www.reddit.com/user/hajimetwi3/](https://www.reddit.com/user/hajimetwi3/)  
+- BlueSky: [https://bsky.app/profile/hajimetwi3.bsky.social](https://bsky.app/profile/hajimetwi3.bsky.social)
+

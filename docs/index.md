@@ -38,7 +38,10 @@ title: Hajime Tsui - Researcher / Engineer
 - [Hijacking AI Agents: Enticement Attacks on Autonomous Systems Using AI Breakout as Bait](https://hajimetwi3.github.io/misc/AI/HijackingAIAgents/)
 
 ## Tools  
-- [Yatta?](https://hajimetwi3.github.io/misc/tools/yatta/)  
+- [Yatta?](https://github.com/hajimetwi3/misc/tree/main/docs/tools/yatta)  
+- [Tsui Clock](https://github.com/hajimetwi3/misc/tree/main/docs/tools/tsui-clock)
+- [Tsui Editor](https://github.com/hajimetwi3/misc/tree/main/docs/tools/tsui-editor)
+- [Market charts](https://github.com/hajimetwi3/misc/tree/main/docs/tools/market-charts)  
   
 ## Community  
 - ORCID: [0009-0001-3050-1725](https://orcid.org/0009-0001-3050-1725)  

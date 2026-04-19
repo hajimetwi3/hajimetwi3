@@ -51,6 +51,7 @@ Docker: [https://www.docker.com/](https://www.docker.com/)
 [Yatta?](https://hajimetwi3.github.io/misc/tools/yatta/)  
 [market-charts](https://hajimetwi3.github.io/misc/tools/market-charts/)  
 [Tsui Clock](https://hajimetwi3.github.io/misc/tools/tsui-clock/)  
+[Tsui editor](https://hajimetwi3.github.io/misc/tools/tsui-editor/tsui-editor.html)  
 
 
 ---  

@@ -41,7 +41,8 @@ title: Hajime Tsui - Researcher / Engineer
 - [Yatta?](https://github.com/hajimetwi3/misc/tree/main/docs/tools/yatta)  
 - [Tsui Clock](https://github.com/hajimetwi3/misc/tree/main/docs/tools/tsui-clock)
 - [Tsui Editor](https://github.com/hajimetwi3/misc/tree/main/docs/tools/tsui-editor)
-- [Market charts](https://github.com/hajimetwi3/misc/tree/main/docs/tools/market-charts)  
+- [Market charts](https://github.com/hajimetwi3/misc/tree/main/docs/tools/market-charts)
+- [Tsui QR](https://github.com/hajimetwi3/tsui-qr)  
   
 ## Community  
 - ORCID: [0009-0001-3050-1725](https://orcid.org/0009-0001-3050-1725)  

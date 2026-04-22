@@ -1,1 +1,649 @@
-temp
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<!-- Clickjacking defense -->
+<style id="antiClickjack">html{display:none !important;}</style>
+<script>
+  (function(){
+    if (self === top) {
+      var s = document.getElementById('antiClickjack');
+      if (s && s.parentNode) s.parentNode.removeChild(s);
+    } else {
+      try { top.location = self.location; } catch (e) {}
+      try { document.documentElement.innerHTML = ''; } catch (e) {}
+    }
+  })();
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="referrer" content="no-referrer">
+<meta name="theme-color" content="#1a1a1a">
+<meta name="description" content="Tsui series — 静かな道具たち。ブラウザで完結、広告なし、プライバシー配慮。">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' 'unsafe-inline' https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self' data:; connect-src https://cloudflareinsights.com; base-uri 'none'; form-action 'none';">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%231a1a1a'/%3E%3Crect x='7' y='7' width='18' height='18' rx='4' fill='none' stroke='%237dd3c0' stroke-width='2'/%3E%3Crect x='13' y='13' width='6' height='6' rx='1' fill='%237dd3c0'/%3E%3C/svg%3E">
+<title>Tsui series — 静かな道具たち</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #1a1a1a;
+    --bg-card: #1e1e1e;
+    --fg: #e4e4e4;
+    --fg-dim: #888;
+    --fg-faint: #6f6f6f;
+    --accent: #7dd3c0;         /* calm — teal */
+    --accent-plus: #e8b842;    /* calm — amber */
+    --glow-color: transparent;
+    --border: #2a2a2a;
+    --border-strong: #3a3a3a;
+  }
+
+  /* ========== Neon themes (Tsui Clock 互換パレット) ========== */
+
+  html[data-theme="green"]  { --accent:#39ff77; --accent-plus:#ffb000; --glow-color:#39ff77; }
+  html[data-theme="amber"]  { --accent:#ffb000; --accent-plus:#ff26b3; --glow-color:#ffb000; }
+  html[data-theme="red"]    { --accent:#ffc0b8; --accent-plus:#39ff77; --glow-color:#ff2020; }
+  html[data-theme="pink"]   { --accent:#ffc8f0; --accent-plus:#39ff77; --glow-color:#ff26b3; }
+  html[data-theme="cyber"]  { --accent:#B2FFCA; --accent-plus:#ff26b3; --glow-color:#39ff77; }
+
+  html[data-theme] h1.title,
+  html[data-theme] .tier h2,
+  html[data-theme] .plus-sign,
+  html[data-theme] .theme-switch button.active {
+    text-shadow: 0 0 10px var(--glow-color), 0 0 22px var(--glow-color);
+  }
+  html[data-theme] .brand svg {
+    filter: drop-shadow(0 0 6px var(--glow-color));
+  }
+
+  html { background: var(--bg); }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Hiragino Sans", "Yu Gothic UI", sans-serif;
+    background: var(--bg);
+    color: var(--fg);
+    font-size: 15px;
+    line-height: 1.75;
+    -webkit-font-smoothing: antialiased;
+    min-height: 100vh;
+  }
+
+  .mono, code {
+    font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+    font-size: 0.88em;
+    letter-spacing: 0.01em;
+  }
+  code { color: var(--fg-dim); }
+
+  .container {
+    max-width: 820px;
+    margin: 0 auto;
+    padding: 40px 28px 60px;
+  }
+
+  /* ========== Theme switch ========== */
+
+  .theme-switch {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 2px;
+    margin-bottom: 50px;
+    font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    flex-wrap: wrap;
+  }
+
+  .theme-switch .theme-label {
+    color: var(--fg-faint);
+    margin-right: 8px;
+    font-size: 10px;
+    text-transform: uppercase;
+  }
+
+  .theme-switch button {
+    background: transparent;
+    border: none;
+    color: var(--fg-dim);
+    cursor: pointer;
+    font-family: inherit;
+    font-size: inherit;
+    letter-spacing: inherit;
+    padding: 3px 7px;
+    border-bottom: 1px dotted transparent;
+    transition: color 0.2s, border-color 0.2s, text-shadow 0.3s;
+  }
+
+  .theme-switch button:hover { color: var(--fg); }
+
+  .theme-switch button.active {
+    color: var(--accent);
+    border-bottom-color: var(--accent);
+  }
+
+  /* ========== Masthead ========== */
+
+  .masthead {
+    padding-bottom: 56px;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 80px;
+  }
+
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin-bottom: 28px;
+  }
+
+  .brand svg {
+    width: 32px;
+    height: 32px;
+    color: var(--accent);
+    flex-shrink: 0;
+    transition: filter 0.3s;
+  }
+
+  h1.title {
+    font-family: Georgia, "Iowan Old Style", "Hiragino Mincho ProN", "Yu Mincho", serif;
+    font-size: 44px;
+    font-weight: 400;
+    letter-spacing: -0.5px;
+    line-height: 1;
+    transition: text-shadow 0.3s;
+  }
+
+  h1.title .series {
+    color: var(--fg-faint);
+    font-weight: 300;
+    margin-left: 6px;
+    text-shadow: none !important;
+  }
+
+  .tagline {
+    color: var(--fg-dim);
+    font-size: 16px;
+    line-height: 1.85;
+    max-width: 58ch;
+  }
+
+  .manifesto {
+    margin-top: 22px;
+    font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+    font-size: 12.5px;
+    letter-spacing: 0.08em;
+    color: var(--fg-faint);
+    text-transform: lowercase;
+  }
+
+  .manifesto span { color: var(--accent); }
+
+  /* ========== Tier ========== */
+
+  .tier { margin-bottom: 80px; }
+  .tier:last-of-type { margin-bottom: 0; }
+
+  .tier-header {
+    display: flex;
+    align-items: baseline;
+    gap: 18px;
+    margin-bottom: 14px;
+    padding-bottom: 18px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .tier-num {
+    color: var(--fg-faint);
+    font-size: 11px;
+    font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+    letter-spacing: 0.1em;
+  }
+
+  .tier h2 {
+    font-family: Georgia, "Iowan Old Style", "Hiragino Mincho ProN", "Yu Mincho", serif;
+    font-size: 30px;
+    font-weight: 400;
+    letter-spacing: -0.3px;
+    line-height: 1;
+    color: var(--accent);
+    transition: text-shadow 0.3s;
+  }
+
+  .tier.plus h2 { color: var(--accent-plus); }
+  .tier.plus h2 .plus-sign { color: var(--accent-plus); }
+
+  .tier-meta {
+    color: var(--fg-faint);
+    font-size: 11px;
+    font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+    letter-spacing: 0.08em;
+    margin-left: auto;
+  }
+
+  .tier-desc {
+    color: var(--fg-dim);
+    font-size: 14px;
+    line-height: 1.8;
+    margin-bottom: 32px;
+    max-width: 56ch;
+  }
+
+  /* ========== Tool cards ========== */
+
+  .tools {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: 20px;
+  }
+
+  .tool {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 22px 22px 18px;
+    display: flex;
+    flex-direction: column;
+    transition: border-color 0.2s ease;
+  }
+
+  .tool:hover { border-color: var(--border-strong); }
+
+  .tool-head {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 12px;
+    flex-wrap: wrap;
+  }
+
+  .tool h3 {
+    font-family: Georgia, "Iowan Old Style", "Hiragino Mincho ProN", "Yu Mincho", serif;
+    font-size: 20px;
+    font-weight: 400;
+    letter-spacing: -0.2px;
+    color: var(--fg);
+    margin-right: auto;
+  }
+
+  .badge {
+    font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+    font-size: 10px;
+    letter-spacing: 0.08em;
+    padding: 2px 8px;
+    border-radius: 3px;
+    border: 1px solid var(--border-strong);
+    color: var(--fg-dim);
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+
+  .badge-pure { color: var(--accent); border-color: var(--accent); opacity: 0.85; }
+  .badge-plus { color: var(--accent-plus); border-color: var(--accent-plus); opacity: 0.85; }
+  .badge-wip  { color: var(--fg-dim); border-style: dashed; }
+
+  .tool p.desc {
+    color: var(--fg-dim);
+    font-size: 13.5px;
+    line-height: 1.75;
+    margin-bottom: 14px;
+    flex: 1;
+  }
+
+  /* Transparency block (Tsui+) */
+  .transparency {
+    font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+    font-size: 11px;
+    background: color-mix(in srgb, var(--accent-plus) 5%, transparent);
+    border: 1px solid color-mix(in srgb, var(--accent-plus) 22%, transparent);
+    border-radius: 4px;
+    padding: 10px 12px;
+    margin-bottom: 14px;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    column-gap: 14px;
+    row-gap: 4px;
+    line-height: 1.5;
+  }
+  .transparency dt {
+    color: var(--fg-faint);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+  .transparency dd { color: var(--fg-dim); }
+
+  .tool-links {
+    display: flex;
+    gap: 16px;
+    padding-top: 12px;
+    border-top: 1px solid var(--border);
+    font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+    font-size: 12px;
+    flex-wrap: wrap;
+  }
+
+  .tool-links a {
+    color: var(--fg-dim);
+    text-decoration: none;
+    border-bottom: 1px dotted transparent;
+    transition: color 0.15s, border-color 0.15s;
+  }
+
+  .tool-links a:hover {
+    color: var(--accent);
+    border-bottom-color: var(--accent);
+  }
+
+  .tier.plus .tool-links a:hover {
+    color: var(--accent-plus);
+    border-bottom-color: var(--accent-plus);
+  }
+
+  .tool-links a.disabled {
+    opacity: 0.35;
+    pointer-events: none;
+  }
+
+  .tool-links .links-sep {
+    color: var(--fg-faint);
+    user-select: none;
+  }
+
+  /* ========== Coming soon card ========== */
+
+  .tool.coming-soon {
+    background: transparent;
+    border-style: dashed;
+    border-color: var(--border);
+  }
+
+  .tool.coming-soon:hover { border-color: var(--border-strong); }
+
+  .tool.coming-soon h3 {
+    color: var(--fg-dim);
+    font-style: italic;
+  }
+
+  .tool.coming-soon .desc {
+    color: var(--fg-faint);
+  }
+
+  .tool.coming-soon .tool-links {
+    color: var(--fg-faint);
+    font-style: italic;
+  }
+
+  /* ========== Footer ========== */
+
+  footer {
+    margin-top: 100px;
+    padding-top: 30px;
+    border-top: 1px solid var(--border);
+    color: var(--fg-faint);
+    font-size: 12px;
+    font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+    letter-spacing: 0.04em;
+  }
+
+  footer a {
+    color: var(--fg-dim);
+    text-decoration: none;
+    border-bottom: 1px dotted var(--fg-faint);
+    transition: color 0.15s, border-color 0.15s;
+  }
+
+  footer a:hover {
+    color: var(--accent);
+    border-bottom-color: var(--accent);
+  }
+
+  /* ========== Analytics disclosure (このページのみ) ========== */
+
+  .analytics-note {
+    margin: 24px auto 0;
+    max-width: 640px;
+    padding: 12px 14px;
+    font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+    font-size: 10.5px;
+    line-height: 1.75;
+    color: var(--fg-dim);
+    letter-spacing: 0.03em;
+    background: color-mix(in srgb, var(--accent-plus) 3%, transparent);
+    border: 1px solid color-mix(in srgb, var(--accent-plus) 15%, transparent);
+    border-radius: 4px;
+  }
+
+  .analytics-note .label {
+    color: var(--fg-faint);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-right: 8px;
+  }
+
+  /* ========== Focus visibility (keyboard a11y) ========== */
+
+  .theme-switch button:focus-visible,
+  .tool-links a:focus-visible,
+  footer a:focus-visible,
+  .analytics-note a:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+
+  /* ========== Responsive ========== */
+
+  @media (max-width: 540px) {
+    .container { padding: 24px 20px 40px; }
+    h1.title { font-size: 34px; }
+    .tier h2 { font-size: 24px; }
+    .masthead { padding-bottom: 40px; margin-bottom: 60px; }
+    .tier { margin-bottom: 60px; }
+    .tools { grid-template-columns: 1fr; }
+    .tier-meta { display: none; }
+    .brand { gap: 14px; }
+    .brand svg { width: 26px; height: 26px; }
+    .theme-switch { margin-bottom: 32px; justify-content: flex-start; }
+    .theme-switch .theme-label { display: none; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    * { transition: none !important; animation: none !important; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <!-- ========== Theme switch ========== -->
+  <div class="theme-switch" role="group" aria-label="neon theme (Tsui Clock互換)">
+    <span class="theme-label">theme</span>
+    <button type="button" data-theme="calm" class="active">calm</button>
+    <button type="button" data-theme="green">green</button>
+    <button type="button" data-theme="amber">amber</button>
+    <button type="button" data-theme="red">red</button>
+    <button type="button" data-theme="pink">pink</button>
+    <button type="button" data-theme="cyber">cyber</button>
+  </div>
+
+  <!-- ========== Masthead ========== -->
+  <header class="masthead">
+    <div class="brand">
+      <svg viewBox="0 0 32 32" aria-hidden="true">
+        <rect x="5" y="5" width="22" height="22" rx="5" fill="none" stroke="currentColor" stroke-width="2"/>
+        <rect x="12" y="12" width="8" height="8" rx="1.5" fill="currentColor"/>
+      </svg>
+      <h1 class="title">Tsui<span class="series">series</span></h1>
+    </div>
+    <p class="tagline">
+      ブラウザで完結する、静かな道具たち。<br>
+      広告も外部データ送信もなく、使い終われば閉じるだけ。
+    </p>
+    <p class="manifesto">
+      <span>//</span> no tracking &nbsp; <span>//</span> no ads &nbsp; <span>//</span> no hidden fetch
+    </p>
+  </header>
+
+  <!-- ========== Tier 01: Tsui (pure) ========== -->
+  <section class="tier pure">
+    <div class="tier-header">
+      <span class="tier-num">01</span>
+      <h2>Tsui</h2>
+      <span class="tier-meta">no external fetch</span>
+    </div>
+    <p class="tier-desc">
+      広告、外部データ送信ゼロ。最低限のデータをブラウザ内へ保存。<code>connect-src 'none'</code> または <code>'self'</code> で遮断。
+    </p>
+
+    <div class="tools">
+
+      <!-- Tsui Editor -->
+      <article class="tool">
+        <div class="tool-head">
+          <h3>Tsui Editor</h3>
+          <span class="badge badge-pure">Zero</span>
+        </div>
+        <p class="desc">ブラウザで動くローカルファイルエディタ。File System Access API でフォルダまるごと読み書き。タブ・ツリー・PWA対応、それ以上のことはしない。Chromium 系ブラウザ向け。</p>
+        <nav class="tool-links">
+          <a href="https://hajimetwi3.github.io/misc/tools/tsui-editor/tsui-editor.html">使う →</a>
+          <a href="https://note.com/hajimetwi3/n/n5a3475a672c0">note</a>
+          <a href="https://github.com/hajimetwi3/misc/tree/main/docs/tools/tsui-editor">GitHub</a>
+        </nav>
+      </article>
+
+      <!-- Tsui Clock -->
+      <article class="tool">
+        <div class="tool-head">
+          <h3>Tsui Clock</h3>
+          <span class="badge badge-pure">Zero</span>
+        </div>
+        <p class="desc">ネオン発光が気持ちいい、7セグ対応のサイバーパンク風デジタル時計。7テーマ (Green / Amber / Red / Pink / Cyber / Auto / Dark)、FX / BG 演出、PiP、Wake Lock、PWA 対応。</p>
+        <nav class="tool-links">
+          <a href="https://hajimetwi3.github.io/misc/tools/tsui-clock/">使う →</a>
+          <a href="https://note.com/hajimetwi3/n/nbdf5cbde25fe">note</a>
+          <a href="https://github.com/hajimetwi3/misc/tree/main/docs/tools/tsui-clock">GitHub</a>
+        </nav>
+      </article>
+
+      <!-- Tsui QR -->
+      <article class="tool">
+        <div class="tool-head">
+          <h3>Tsui QR</h3>
+          <span class="badge badge-pure">Zero</span>
+        </div>
+        <p class="desc">入力を端末外に出さない QR コード生成ツール。TEXT / URL / Wi-Fi / Mail / Tel / SMS / vCard / Geo に対応、SVG / PNG 保存・クリップボードコピー可能。PWA 対応。</p>
+        <nav class="tool-links">
+          <a href="https://hajimetwi3.github.io/tsui-qr/">使う →</a>
+          <a href="https://note.com/hajimetwi3/n/na0c77bdc19b4">note</a>
+          <a href="https://github.com/hajimetwi3/tsui-qr">GitHub</a>
+        </nav>
+      </article>
+
+      <!-- やった？ -->
+      <article class="tool">
+        <div class="tool-head">
+          <h3>やった？</h3>
+          <span class="badge badge-pure">Zero</span>
+        </div>
+        <p class="desc">シンプルな日次ルーチンチェックツール。データはブラウザ内 (localStorage) にのみ保存され、外部には一切送られない。習慣化の静かな相棒。</p>
+        <nav class="tool-links">
+          <a href="https://hajimetwi3.github.io/misc/tools/yatta/">使う →</a>
+          <a href="https://note.com/hajimetwi3/n/n3dc77378c5c4">note</a>
+          <a href="https://github.com/hajimetwi3/misc/tree/main/docs/tools/yatta">GitHub</a>
+        </nav>
+      </article>
+
+      <!-- Coming soon -->
+      <article class="tool coming-soon" aria-label="coming soon">
+        <div class="tool-head">
+          <h3>coming soon</h3>
+          <span class="badge badge-wip">soon</span>
+        </div>
+        <p class="desc">次の道具を作っています。</p>
+        <nav class="tool-links">
+          <span>stay tuned</span>
+        </nav>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ========== Tier 02: Tsui+ ========== -->
+  <section class="tier plus">
+    <div class="tier-header">
+      <span class="tier-num">02</span>
+      <h2>Tsui<span class="plus-sign">+</span></h2>
+      <span class="tier-meta">minimal network · transparent</span>
+    </div>
+    <p class="tier-desc">
+      機能上必要な通信のみを行う。通信先・送受信内容を各ツールごとに明示する。それがTsui+。
+    </p>
+
+    <div class="tools">
+
+      <!-- IP Info (showip) -->
+      <article class="tool">
+        <div class="tool-head">
+          <h3>IP Info</h3>
+          <span class="badge badge-plus">Two</span>
+        </div>
+        <p class="desc">自分のパブリック IP と関連情報 (ASN、都市、タイムゾーン、接続情報など) を表示。取得は表示目的の一時取得のみで、保存・解析はしない。日本語版・英語版あり。</p>
+        <dl class="transparency">
+          <dt>endpoint</dt><dd>Cloudflare Worker + icanhazip</dd>
+          <dt>fetches</dt><dd>IP / ASN / geo / network info</dd>
+          <dt>storage</dt><dd>none（表示のみ、保存なし）</dd>
+        </dl>
+        <nav class="tool-links">
+          <a href="https://hajimetwi3.github.io/hajimetwi3/tools/showip.html">使う (JP) →</a>
+          <a href="https://hajimetwi3.github.io/hajimetwi3/tools/showip.en.html">使う (EN) →</a>
+          <a href="https://note.com/hajimetwi3/n/nf5467f5481ae">note</a>
+          <a href="https://github.com/hajimetwi3/hajimetwi3/blob/main/docs/tools/showip.md">GitHub</a>
+        </nav>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ========== Footer ========== -->
+  <footer>
+    <span>by <a href="https://hajimetwi3.github.io/hajimetwi3/">hajimetwi3</a></span>
+    <span>tools offline-capable · all traffic disclosed</span>
+  </footer>
+
+  <!-- ========== Analytics disclosure ========== -->
+  <aside class="analytics-note" aria-label="analytics disclosure">
+    <span class="label">// disclosure</span>
+    <strong style="color:var(--fg-dim)">Tsui / Tsui+ のツール本体には計測は一切入っていません。</strong>
+    このランディングや作者のプロフィール等の情報ページでは、訪問数把握のため Cloudflare Web Analytics を利用しています（Cookieなし / フィンガープリントなし / クロスサイトトラッキングなし）。なお、別途プラットフォーム側（配信元サーバや中継事業者等）で計測・記録されている可能性はあります。
+  </aside>
+
+</div>
+
+<script>
+  // Neon theme switcher — Tsui Clock 互換パレット、セッション限定 (no residue)
+  (function(){
+    var buttons = document.querySelectorAll('.theme-switch button');
+    buttons.forEach(function(btn){
+      btn.addEventListener('click', function(){
+        var theme = btn.dataset.theme;
+        if (theme === 'calm') {
+          document.documentElement.removeAttribute('data-theme');
+        } else {
+          document.documentElement.dataset.theme = theme;
+        }
+        buttons.forEach(function(b){
+          b.classList.toggle('active', b === btn);
+        });
+      });
+    });
+  })();
+</script>
+<!-- This page is itself Tsui-compliant: no ads, no cookies, no fingerprinting. -->
+<!-- Cloudflare Web Analytics (このランディングページのみ、訪問数・国程度の計測) -->
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "219971a8b25d4506877afc0a72110eb1"}'></script>
+</body>
+</html>

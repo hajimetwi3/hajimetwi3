@@ -46,14 +46,9 @@ Docker: [https://www.docker.com/](https://www.docker.com/)
 [https://archive.ph/](https://archive.ph/)  
 
 ## WebTools  
-[IP check/DL Speed Test(Japanese)](https://hajimetwi3.github.io/hajimetwi3/tools/showip.html)  
-[IP check/DL Speed Test(English)](https://hajimetwi3.github.io/hajimetwi3/tools/showip.en.html)  
-[Yatta?](https://hajimetwi3.github.io/misc/tools/yatta/)  
+[Tsui-series](https://hajimetwi3.github.io/hajimetwi3/Tsui-series/)  
+&nbsp;&nbsp; ( Editor / Clock / QR / Yatta? / IP Info )  
 [market-charts](https://hajimetwi3.github.io/misc/tools/market-charts/)  
-[Tsui Clock](https://hajimetwi3.github.io/misc/tools/tsui-clock/)  
-[Tsui editor](https://hajimetwi3.github.io/misc/tools/tsui-editor/tsui-editor.html)  
-[Tsui QR](https://hajimetwi3.github.io/tsui-qr/)  
-
 
 ---  
 

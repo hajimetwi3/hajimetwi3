@@ -33,6 +33,7 @@
     --fg-faint: #6f6f6f;
     --accent: #7dd3c0;         /* calm — teal */
     --accent-plus: #e8b842;    /* calm — amber */
+    --accent-tilde: #b28fd0;   /* calm — muted violet (for Tsui~) */
     --glow-color: transparent;
     --border: #2a2a2a;
     --border-strong: #3a3a3a;
@@ -48,15 +49,16 @@
 
   /* ========== Neon themes (Tsui Clock 互換パレット) ========== */
 
-  html[data-theme="green"]  { --accent:#39ff77; --accent-plus:#ffb000; --glow-color:#39ff77; }
-  html[data-theme="amber"]  { --accent:#ffb000; --accent-plus:#ff26b3; --glow-color:#ffb000; }
-  html[data-theme="red"]    { --accent:#ffc0b8; --accent-plus:#39ff77; --glow-color:#ff2020; }
-  html[data-theme="pink"]   { --accent:#ffc8f0; --accent-plus:#39ff77; --glow-color:#ff26b3; }
-  html[data-theme="cyber"]  { --accent:#B2FFCA; --accent-plus:#ff26b3; --glow-color:#39ff77; }
+  html[data-theme="green"]  { --accent:#39ff77; --accent-plus:#ffb000; --accent-tilde:#c0a8ff; --glow-color:#39ff77; }
+  html[data-theme="amber"]  { --accent:#ffb000; --accent-plus:#ff26b3; --accent-tilde:#8affc0; --glow-color:#ffb000; }
+  html[data-theme="red"]    { --accent:#ffc0b8; --accent-plus:#39ff77; --accent-tilde:#b8c8ff; --glow-color:#ff2020; }
+  html[data-theme="pink"]   { --accent:#ffc8f0; --accent-plus:#39ff77; --accent-tilde:#c8e0ff; --glow-color:#ff26b3; }
+  html[data-theme="cyber"]  { --accent:#B2FFCA; --accent-plus:#ff26b3; --accent-tilde:#ffd4a3; --glow-color:#39ff77; }
 
   html[data-theme] h1.title,
   html[data-theme] .tier h2,
   html[data-theme] .plus-sign,
+  html[data-theme] .tilde-sign,
   html[data-theme] .theme-switch button.active {
     text-shadow: 0 0 10px var(--glow-color), 0 0 22px var(--glow-color);
   }
@@ -267,6 +269,9 @@
   .tier.plus h2 { color: var(--accent-plus); }
   .tier.plus h2 .plus-sign { color: var(--accent-plus); }
 
+  .tier.tilde h2 { color: var(--accent-tilde); }
+  .tier.tilde h2 .tilde-sign { color: var(--accent-tilde); font-weight: 300; }
+
   .tier-meta {
     color: var(--fg-faint);
     font-size: calc(11px * var(--fs-scale));
@@ -334,6 +339,7 @@
 
   .badge-pure { color: var(--accent); border-color: var(--accent); opacity: 0.85; }
   .badge-plus { color: var(--accent-plus); border-color: var(--accent-plus); opacity: 0.85; }
+  .badge-tilde { color: var(--accent-tilde); border-color: var(--accent-tilde); opacity: 0.85; }
   .badge-wip  { color: var(--fg-dim); border-style: dashed; }
 
   .tool p.desc {
@@ -391,6 +397,11 @@
   .tier.plus .tool-links a:hover {
     color: var(--accent-plus);
     border-bottom-color: var(--accent-plus);
+  }
+
+  .tier.tilde .tool-links a:hover {
+    color: var(--accent-tilde);
+    border-bottom-color: var(--accent-tilde);
   }
 
   .tool-links a.disabled {
@@ -698,6 +709,36 @@
     </div>
   </section>
 
+  <!-- ========== Tier 03: Tsui~ ========== -->
+  <section class="tier tilde">
+    <div class="tier-header">
+      <span class="tier-num">03</span>
+      <h2>Tsui<span class="tilde-sign">~</span></h2>
+      <span class="tier-meta">no purpose · transparent</span>
+    </div>
+    <p class="tier-desc">
+      実用性を考えない、ただそこにある道具たち。
+      広告・トラッキングはゼロのまま。
+    </p>
+
+    <div class="tools">
+
+      <!-- Tsui Lume -->
+      <article class="tool">
+        <div class="tool-head">
+          <h3>Tsui Lume</h3>
+          <span class="badge badge-tilde">Zero</span>
+        </div>
+        <p class="desc">深い闇に漂う、光の粒。気まぐれに集まり、弾け、回り、時々文字や形に並ぶ。端に置いておく、小さな宇宙。</p>
+        <nav class="tool-links">
+          <a href="https://hajimetwi3.github.io/tsui-lume/">使う →</a>
+          <a href="https://github.com/hajimetwi3/tsui-lume">GitHub</a>
+        </nav>
+      </article>
+
+    </div>
+  </section>
+
   <!-- ========== Footer ========== -->
   <footer>
     <span>by <a href="https://hajimetwi3.github.io/hajimetwi3/">hajimetwi3</a></span>
@@ -707,7 +748,7 @@
   <!-- ========== Analytics disclosure ========== -->
   <aside class="analytics-note" aria-label="analytics disclosure">
     <span class="label">// disclosure</span>
-    <strong style="color:var(--fg-dim)">Tsui / Tsui+ のツール本体には計測は一切入っていません。</strong>
+    <strong style="color:var(--fg-dim)">Tsui / Tsui+ / Tsui~ のツール本体には計測は一切入っていません。</strong>
     このランディングや作者のプロフィール等の情報ページでは、訪問数把握のため Cloudflare Web Analytics を利用しています（Cookieなし / フィンガープリントなし / クロスサイトトラッキングなし）。なお、別途プラットフォーム側（配信元サーバや中継事業者等）で計測・記録されている可能性はあります。<br><br>
     これらのツールは安全やプライバシーに配慮した設計ですが、ブラウザ拡張機能の挙動はツール側から制御できません。
     これは機密データを扱うサイトを開く場合でも同じ条件です（どんなウェブサイトを利用する場合でも同じ条件）。

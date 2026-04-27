@@ -59,4 +59,5 @@ title: Hajime Tsui - Researcher / Engineer
 
 ---  
 
-<img src="images/ORCID.png" width="120" alt="https://orcid.org/0009-0001-3050-1725">  
+<img src="images/ORCID.png" width="120" alt="https://orcid.org/0009-0001-3050-1725">　　　　　　　<img src="./images/Tsuiseries_qr1.1.jpg"  width="120">  
+

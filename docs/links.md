@@ -46,8 +46,7 @@ Docker: [https://www.docker.com/](https://www.docker.com/)
 [https://archive.ph/](https://archive.ph/)  
 
 ## WebTools  
-[Tsui-series](https://hajimetwi3.github.io/hajimetwi3/Tsui-series/)  
-&nbsp;&nbsp; ( Editor / Clock / QR / Yatta? / IP Info )  
+[**Tsui series**](https://hajimetwi3.github.io/hajimetwi3/Tsui-series/) ( Editor / Clock / QR / Yatta? / IP Info )  
 [market-charts](https://hajimetwi3.github.io/misc/tools/market-charts/)  
 
 ---  

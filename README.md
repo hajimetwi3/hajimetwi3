@@ -20,10 +20,8 @@
   [Debias the Debiasing: On the Concept of "Debiasing Debiasing"](https://doi.org/10.5281/zenodo.19311081)  
 
 ## Tools  
-  [Yatta?](https://hajimetwi3.github.io/misc/tools/yatta/)  
-  [market-charts](https://hajimetwi3.github.io/misc/tools/market-charts/)  
-  [Tsui Clock](https://hajimetwi3.github.io/misc/tools/tsui-clock/)  
-  [Tsui editor](https://hajimetwi3.github.io/misc/tools/tsui-editor/tsui-editor.html)  
+  [Tsui-series](https://hajimetwi3.github.io/hajimetwi3/Tsui-series/)  
+  &nbsp;&nbsp; ( Editor / Clock / QR / Yatta? / IP Info )  
   
 ---  
 

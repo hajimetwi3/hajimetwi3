@@ -20,8 +20,8 @@
   [Debias the Debiasing: On the Concept of "Debiasing Debiasing"](https://doi.org/10.5281/zenodo.19311081)  
 
 ## Tools  
-  [Tsui-series](https://hajimetwi3.github.io/hajimetwi3/Tsui-series/)  
-  &nbsp;&nbsp; ( Editor / Clock / QR / Yatta? / IP Info )  
+  [**Tsui series**](https://hajimetwi3.github.io/hajimetwi3/Tsui-series/) ( Editor / Clock / QR / Yatta? / IP Info )     
+  &nbsp;&nbsp; <img src="./docs/images/Tsuiseries_qr1.1.jpg"  width="120">  
   
 ---  
 

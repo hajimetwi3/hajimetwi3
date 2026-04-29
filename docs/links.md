@@ -28,6 +28,7 @@ Visual Studio Code: [https://code.visualstudio.com/](https://code.visualstudio.c
 Git: [https://git-scm.com/](https://git-scm.com/)  
 Node.js: [https://nodejs.org](https://nodejs.org)  
 Docker: [https://www.docker.com/](https://www.docker.com/)  
+Chromium: [https://www.chromium.org/Home](https://www.chromium.org/Home)  
 
 ## Search  
 [https://www.google.com/](https://www.google.com/)  

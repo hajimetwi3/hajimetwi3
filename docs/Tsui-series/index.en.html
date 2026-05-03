@@ -1,0 +1,880 @@
+<!DOCTYPE html>
+<!-- Tsui series landing (EN) — JP edition: index.html -->
+<html lang="en" data-size="M">
+<head>
+<meta charset="UTF-8">
+<!-- Clickjacking defense -->
+<style id="antiClickjack">html{display:none !important;}</style>
+<script>
+  (function(){
+    if (self === top) {
+      var s = document.getElementById('antiClickjack');
+      if (s && s.parentNode) s.parentNode.removeChild(s);
+    } else {
+      try { top.location = self.location; } catch (e) {}
+      try { document.documentElement.innerHTML = ''; } catch (e) {}
+    }
+  })();
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="referrer" content="no-referrer">
+<meta name="theme-color" content="#1a1a1a">
+<meta name="description" content="Tsui series — quiet tools that run entirely in your browser. No ads, privacy-respecting.">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' 'unsafe-inline' https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self' data:; connect-src https://cloudflareinsights.com; base-uri 'none'; form-action 'none';">
+<link rel="alternate" hreflang="ja" href="./index.html">
+<link rel="alternate" hreflang="en" href="./index.en.html">
+<link rel="alternate" hreflang="x-default" href="./index.html">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%231a1a1a'/%3E%3Crect x='7' y='7' width='18' height='18' rx='4' fill='none' stroke='%237dd3c0' stroke-width='2'/%3E%3Crect x='13' y='13' width='6' height='6' rx='1' fill='%237dd3c0'/%3E%3C/svg%3E">
+<title>Tsui series — Quiet tools</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #1a1a1a;
+    --bg-card: #1e1e1e;
+    --fg: #e4e4e4;
+    --fg-dim: #888;
+    --fg-faint: #6f6f6f;
+    --accent: #7dd3c0;         /* calm — teal */
+    --accent-plus: #e8b842;    /* calm — amber */
+    --accent-tilde: #b28fd0;   /* calm — muted violet (for Tsui~) */
+    --glow-color: transparent;
+    --border: #2a2a2a;
+    --border-strong: #3a3a3a;
+    --fs-scale: 1.15;          /* M (default): S=1.0 / M=1.15 / L=1.3 / XL=1.5 */
+  }
+
+  /* ========== Font size levels ========== */
+
+  html[data-size="S"]  { --fs-scale: 1;    }
+  html[data-size="M"]  { --fs-scale: 1.15; }
+  html[data-size="L"]  { --fs-scale: 1.3;  }
+  html[data-size="XL"] { --fs-scale: 1.5;  }
+
+  /* ========== Neon themes (Tsui Clock compatible palette) ========== */
+
+  html[data-theme="green"]  { --accent:#39ff77; --accent-plus:#ffb000; --accent-tilde:#c0a8ff; --glow-color:#39ff77; }
+  html[data-theme="amber"]  { --accent:#ffb000; --accent-plus:#ff26b3; --accent-tilde:#8affc0; --glow-color:#ffb000; }
+  html[data-theme="red"]    { --accent:#ffc0b8; --accent-plus:#39ff77; --accent-tilde:#b8c8ff; --glow-color:#ff2020; }
+  html[data-theme="pink"]   { --accent:#ffc8f0; --accent-plus:#39ff77; --accent-tilde:#c8e0ff; --glow-color:#ff26b3; }
+  html[data-theme="cyber"]  { --accent:#B2FFCA; --accent-plus:#ff26b3; --accent-tilde:#ffd4a3; --glow-color:#39ff77; }
+
+  html[data-theme] h1.title,
+  html[data-theme] .tier h2,
+  html[data-theme] .plus-sign,
+  html[data-theme] .tilde-sign,
+  html[data-theme] .theme-switch button.active {
+    text-shadow: 0 0 10px var(--glow-color), 0 0 22px var(--glow-color);
+  }
+  html[data-theme] .brand svg {
+    filter: drop-shadow(0 0 6px var(--glow-color));
+  }
+
+  html { background: var(--bg); }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Hiragino Sans", "Yu Gothic UI", sans-serif;
+    background: var(--bg);
+    color: var(--fg);
+    font-size: calc(15px * var(--fs-scale));
+    line-height: 1.75;
+    -webkit-font-smoothing: antialiased;
+    min-height: 100vh;
+  }
+
+  .mono, code {
+    font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+    font-size: 0.88em;
+    letter-spacing: 0.01em;
+  }
+  code { color: var(--fg-dim); }
+
+  .container {
+    max-width: 820px;
+    margin: 0 auto;
+    padding: 40px 28px 60px;
+  }
+
+  /* ========== Theme switch ========== */
+
+  .theme-switch {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 2px;
+    font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+    font-size: calc(11px * var(--fs-scale));
+    letter-spacing: 0.08em;
+    flex-wrap: wrap;
+  }
+
+  .theme-switch .theme-label {
+    color: var(--fg-faint);
+    margin-right: 8px;
+    font-size: calc(10px * var(--fs-scale));
+    text-transform: uppercase;
+  }
+
+  .theme-switch button {
+    background: transparent;
+    border: none;
+    color: var(--fg-dim);
+    cursor: pointer;
+    font-family: inherit;
+    font-size: inherit;
+    letter-spacing: inherit;
+    padding: 3px 7px;
+    border-bottom: 1px dotted transparent;
+    transition: color 0.2s, border-color 0.2s, text-shadow 0.3s;
+  }
+
+  .theme-switch button:hover { color: var(--fg); }
+
+  .theme-switch button.active {
+    color: var(--accent);
+    border-bottom-color: var(--accent);
+  }
+
+  /* ========== Size / Lang switch (same look as theme-switch) ========== */
+
+  .top-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 50px;
+    flex-wrap: wrap;
+  }
+
+  .controls-left {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    flex-wrap: wrap;
+  }
+
+  .size-switch,
+  .lang-switch {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+    font-size: calc(11px * var(--fs-scale));
+    letter-spacing: 0.08em;
+  }
+
+  .size-switch .size-label,
+  .lang-switch .lang-label {
+    color: var(--fg-faint);
+    margin-right: 8px;
+    font-size: calc(10px * var(--fs-scale));
+    text-transform: uppercase;
+  }
+
+  .size-switch button,
+  .lang-switch a {
+    background: transparent;
+    border: none;
+    color: var(--fg-dim);
+    cursor: pointer;
+    font-family: inherit;
+    font-size: inherit;
+    letter-spacing: inherit;
+    padding: 3px 7px;
+    border-bottom: 1px dotted transparent;
+    transition: color 0.2s, border-color 0.2s;
+    text-decoration: none;
+    display: inline-block;
+  }
+
+  .size-switch button:hover,
+  .lang-switch a:hover { color: var(--fg); }
+
+  .size-switch button.active,
+  .lang-switch a[aria-current="page"] {
+    color: var(--accent);
+    border-bottom-color: var(--accent);
+  }
+
+  /* ========== Masthead ========== */
+
+  .masthead {
+    padding-bottom: 56px;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 80px;
+  }
+
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin-bottom: 28px;
+  }
+
+  .brand svg {
+    width: 32px;
+    height: 32px;
+    color: var(--accent);
+    flex-shrink: 0;
+    transition: filter 0.3s;
+  }
+
+  h1.title {
+    font-family: Georgia, "Iowan Old Style", "Hiragino Mincho ProN", "Yu Mincho", serif;
+    font-size: calc(44px * var(--fs-scale));
+    font-weight: 400;
+    letter-spacing: -0.5px;
+    line-height: 1;
+    transition: text-shadow 0.3s;
+  }
+
+  h1.title .series {
+    color: var(--fg-faint);
+    font-weight: 300;
+    margin-left: 6px;
+    text-shadow: none !important;
+  }
+
+  .tagline {
+    color: var(--fg-dim);
+    font-size: calc(16px * var(--fs-scale));
+    line-height: 1.85;
+    max-width: 58ch;
+  }
+
+  .manifesto {
+    margin-top: 22px;
+    font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+    font-size: calc(12.5px * var(--fs-scale));
+    letter-spacing: 0.08em;
+    color: var(--fg-faint);
+    text-transform: lowercase;
+  }
+
+  .manifesto span { color: var(--accent); }
+
+  /* ========== Tier ========== */
+
+  .tier { margin-bottom: 80px; }
+  .tier:last-of-type { margin-bottom: 0; }
+
+  .tier-header {
+    display: flex;
+    align-items: baseline;
+    gap: 18px;
+    margin-bottom: 14px;
+    padding-bottom: 18px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .tier-num {
+    color: var(--fg-faint);
+    font-size: calc(11px * var(--fs-scale));
+    font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+    letter-spacing: 0.1em;
+  }
+
+  .tier h2 {
+    font-family: Georgia, "Iowan Old Style", "Hiragino Mincho ProN", "Yu Mincho", serif;
+    font-size: calc(30px * var(--fs-scale));
+    font-weight: 400;
+    letter-spacing: -0.3px;
+    line-height: 1;
+    color: var(--accent);
+    transition: text-shadow 0.3s;
+  }
+
+  .tier.plus h2 { color: var(--accent-plus); }
+  .tier.plus h2 .plus-sign { color: var(--accent-plus); }
+
+  .tier.tilde h2 { color: var(--accent-tilde); }
+  .tier.tilde h2 .tilde-sign { color: var(--accent-tilde); font-weight: 300; }
+
+  .tier-meta {
+    color: var(--fg-faint);
+    font-size: calc(11px * var(--fs-scale));
+    font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+    letter-spacing: 0.08em;
+    margin-left: auto;
+  }
+
+  .tier-desc {
+    color: var(--fg-dim);
+    font-size: calc(14px * var(--fs-scale));
+    line-height: 1.8;
+    margin-bottom: 32px;
+    max-width: 56ch;
+  }
+
+  /* ========== Tool cards ========== */
+
+  .tools {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: 20px;
+  }
+
+  .tool {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 22px 22px 18px;
+    display: flex;
+    flex-direction: column;
+    transition: border-color 0.2s ease;
+  }
+
+  .tool:hover { border-color: var(--border-strong); }
+
+  .tool-head {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 12px;
+    flex-wrap: wrap;
+  }
+
+  .tool h3 {
+    font-family: Georgia, "Iowan Old Style", "Hiragino Mincho ProN", "Yu Mincho", serif;
+    font-size: calc(20px * var(--fs-scale));
+    font-weight: 400;
+    letter-spacing: -0.2px;
+    color: var(--fg);
+    margin-right: auto;
+  }
+
+  .badge {
+    font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+    font-size: calc(10px * var(--fs-scale));
+    letter-spacing: 0.08em;
+    padding: 2px 8px;
+    border-radius: 3px;
+    border: 1px solid var(--border-strong);
+    color: var(--fg-dim);
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+
+  .badge-pure { color: var(--accent); border-color: var(--accent); opacity: 0.85; }
+  .badge-plus { color: var(--accent-plus); border-color: var(--accent-plus); opacity: 0.85; }
+  .badge-tilde { color: var(--accent-tilde); border-color: var(--accent-tilde); opacity: 0.85; }
+  .badge-wip  { color: var(--fg-dim); border-style: dashed; }
+
+  .tool p.desc {
+    color: var(--fg-dim);
+    font-size: calc(13.5px * var(--fs-scale));
+    line-height: 1.75;
+    margin-bottom: 14px;
+    flex: 1;
+  }
+
+  /* Transparency block (Tsui+) */
+  .transparency {
+    font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+    font-size: calc(11px * var(--fs-scale));
+    background: color-mix(in srgb, var(--accent-plus) 5%, transparent);
+    border: 1px solid color-mix(in srgb, var(--accent-plus) 22%, transparent);
+    border-radius: 4px;
+    padding: 10px 12px;
+    margin-bottom: 14px;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    column-gap: 14px;
+    row-gap: 4px;
+    line-height: 1.5;
+  }
+  .transparency dt {
+    color: var(--fg-faint);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+  .transparency dd { color: var(--fg-dim); }
+
+  .tool-links {
+    display: flex;
+    gap: 16px;
+    padding-top: 12px;
+    border-top: 1px solid var(--border);
+    font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+    font-size: calc(12px * var(--fs-scale));
+    flex-wrap: wrap;
+  }
+
+  .tool-links a {
+    color: var(--fg-dim);
+    text-decoration: none;
+    border-bottom: 1px dotted transparent;
+    transition: color 0.15s, border-color 0.15s;
+  }
+
+  .tool-links a:hover {
+    color: var(--accent);
+    border-bottom-color: var(--accent);
+  }
+
+  .tier.plus .tool-links a:hover {
+    color: var(--accent-plus);
+    border-bottom-color: var(--accent-plus);
+  }
+
+  .tier.tilde .tool-links a:hover {
+    color: var(--accent-tilde);
+    border-bottom-color: var(--accent-tilde);
+  }
+
+  .tool-links a.disabled {
+    opacity: 0.35;
+    pointer-events: none;
+  }
+
+  .tool-links .links-sep {
+    color: var(--fg-faint);
+    user-select: none;
+  }
+
+  /* ========== Coming soon card ========== */
+
+  .tool.coming-soon {
+    background: transparent;
+    border-style: dashed;
+    border-color: var(--border);
+  }
+
+  .tool.coming-soon:hover { border-color: var(--border-strong); }
+
+  .tool.coming-soon h3 {
+    color: var(--fg-dim);
+    font-style: italic;
+  }
+
+  .tool.coming-soon .desc {
+    color: var(--fg-faint);
+  }
+
+  .tool.coming-soon .tool-links {
+    color: var(--fg-faint);
+    font-style: italic;
+  }
+
+  /* ========== Footer ========== */
+
+  footer {
+    margin-top: 100px;
+    padding-top: 30px;
+    border-top: 1px solid var(--border);
+    color: var(--fg-faint);
+    font-size: calc(12px * var(--fs-scale));
+    font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+    letter-spacing: 0.04em;
+  }
+
+  footer a {
+    color: var(--fg-dim);
+    text-decoration: none;
+    border-bottom: 1px dotted var(--fg-faint);
+    transition: color 0.15s, border-color 0.15s;
+  }
+
+  footer a:hover {
+    color: var(--accent);
+    border-bottom-color: var(--accent);
+  }
+
+  /* ========== Analytics disclosure (this page only) ========== */
+
+  .analytics-note {
+    margin: 24px auto 0;
+    max-width: 640px;
+    padding: 12px 14px;
+    font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+    font-size: calc(10.5px * var(--fs-scale));
+    line-height: 1.75;
+    color: var(--fg-dim);
+    letter-spacing: 0.03em;
+    background: color-mix(in srgb, var(--accent-plus) 3%, transparent);
+    border: 1px solid color-mix(in srgb, var(--accent-plus) 15%, transparent);
+    border-radius: 4px;
+  }
+
+  .analytics-note .label {
+    color: var(--fg-faint);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-right: 8px;
+  }
+
+  /* ========== Focus visibility (keyboard a11y) ========== */
+
+  .theme-switch button:focus-visible,
+  .size-switch button:focus-visible,
+  .lang-switch a:focus-visible,
+  .tool-links a:focus-visible,
+  footer a:focus-visible,
+  .analytics-note a:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+
+  /* ========== Responsive ========== */
+
+  @media (max-width: 540px) {
+    .container { padding: 24px 20px 40px; }
+    h1.title { font-size: calc(34px * var(--fs-scale)); }
+    .tier h2 { font-size: calc(24px * var(--fs-scale)); }
+    .masthead { padding-bottom: 40px; margin-bottom: 60px; }
+    .tier { margin-bottom: 60px; }
+    .tools { grid-template-columns: 1fr; }
+    .tier-meta { display: none; }
+    .brand { gap: 14px; }
+    .brand svg { width: 26px; height: 26px; }
+    .top-controls { margin-bottom: 32px; flex-direction: column; align-items: flex-start; gap: 8px; }
+    .controls-left { gap: 12px; }
+    .theme-switch, .size-switch, .lang-switch { justify-content: flex-start; flex-wrap: wrap; }
+    .theme-switch .theme-label,
+    .size-switch .size-label,
+    .lang-switch .lang-label { display: none; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    * { transition: none !important; animation: none !important; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <!-- ========== Top controls (size / lang / theme) ========== -->
+  <div class="top-controls">
+    <div class="controls-left">
+      <div class="size-switch" role="group" aria-label="font size">
+        <span class="size-label">size</span>
+        <button type="button" data-size="S">S</button>
+        <button type="button" data-size="M" class="active">M</button>
+        <button type="button" data-size="L">L</button>
+        <button type="button" data-size="XL">XL</button>
+      </div>
+      <div class="lang-switch" role="group" aria-label="language">
+        <span class="lang-label">lang</span>
+        <a href="./index.html" hreflang="ja">日本語</a>
+        <a href="./index.en.html" hreflang="en" aria-current="page">English</a>
+      </div>
+    </div>
+    <div class="theme-switch" role="group" aria-label="neon theme (Tsui Clock compatible)">
+      <span class="theme-label">theme</span>
+      <button type="button" data-theme="calm" class="active">calm</button>
+      <button type="button" data-theme="green">green</button>
+      <button type="button" data-theme="amber">amber</button>
+      <button type="button" data-theme="red">red</button>
+      <button type="button" data-theme="pink">pink</button>
+      <button type="button" data-theme="cyber">cyber</button>
+    </div>
+  </div>
+
+  <!-- ========== Masthead ========== -->
+  <header class="masthead">
+    <div class="brand">
+      <svg viewBox="0 0 32 32" aria-hidden="true">
+        <rect x="5" y="5" width="22" height="22" rx="5" fill="none" stroke="currentColor" stroke-width="2"/>
+        <rect x="12" y="12" width="8" height="8" rx="1.5" fill="currentColor"/>
+      </svg>
+      <h1 class="title">Tsui<span class="series">series</span></h1>
+    </div>
+    <p class="tagline">
+      Quiet tools that run entirely in your browser.<br>
+      No ads, no outbound data — just close the tab when you're done.
+    </p>
+    <p class="manifesto">
+      <span>//</span> no tracking &nbsp; <span>//</span> no ads &nbsp; <span>//</span> no hidden fetch
+    </p>
+  </header>
+
+  <!-- ========== Tier 01: Tsui (pure) ========== -->
+  <section class="tier pure">
+    <div class="tier-header">
+      <span class="tier-num">01</span>
+      <h2>Tsui</h2>
+      <span class="tier-meta">no external fetch</span>
+    </div>
+    <p class="tier-desc">
+      Zero ads, zero outbound data. Minimal data stored only in your browser. Blocked at the source via <code>connect-src 'none'</code> or <code>'self'</code>.
+    </p>
+
+    <div class="tools">
+
+      <!-- Tsui Editor -->
+      <article class="tool">
+        <div class="tool-head">
+          <h3>Tsui Editor</h3>
+          <span class="badge badge-pure">Zero</span>
+        </div>
+        <p class="desc">A browser-based local file editor. Reads and writes entire folders via the File System Access API. Tabs, tree view, PWA — nothing more. For Chromium-based browsers.</p>
+        <nav class="tool-links">
+          <a href="https://hajimetwi3.github.io/misc/tools/tsui-editor/tsui-editor.html">Open →</a>
+          <a href="https://note.com/hajimetwi3/n/n5a3475a672c0">note</a>
+          <a href="https://github.com/hajimetwi3/misc/tree/main/docs/tools/tsui-editor">GitHub</a>
+        </nav>
+      </article>
+
+      <!-- Tsui Clock -->
+      <article class="tool">
+        <div class="tool-head">
+          <h3>Tsui Clock</h3>
+          <span class="badge badge-pure">Zero</span>
+        </div>
+        <p class="desc">A cyberpunk-style digital clock with satisfying neon glow and 7-segment display. 7 themes (Green / Amber / Red / Pink / Cyber / Auto / Dark), FX / BG effects, PiP, Wake Lock, PWA-ready.</p>
+        <nav class="tool-links">
+          <a href="https://hajimetwi3.github.io/misc/tools/tsui-clock/">Open →</a>
+          <a href="https://note.com/hajimetwi3/n/nbdf5cbde25fe">note</a>
+          <a href="https://github.com/hajimetwi3/misc/tree/main/docs/tools/tsui-clock">GitHub</a>
+        </nav>
+      </article>
+
+      <!-- Tsui QR -->
+      <article class="tool">
+        <div class="tool-head">
+          <h3>Tsui QR</h3>
+          <span class="badge badge-pure">Zero</span>
+        </div>
+        <p class="desc">A QR code generator that never lets your input leave your device. Supports TEXT / URL / Wi-Fi / Mail / Tel / SMS / vCard / Geo, with SVG / PNG export and clipboard copy. PWA-ready.</p>
+        <nav class="tool-links">
+          <a href="https://hajimetwi3.github.io/tsui-qr/">Open →</a>
+          <a href="https://note.com/hajimetwi3/n/na0c77bdc19b4">note</a>
+          <a href="https://github.com/hajimetwi3/tsui-qr">GitHub</a>
+        </nav>
+      </article>
+
+      <!-- Yatta? -->
+      <article class="tool">
+        <div class="tool-head">
+          <h3>Yatta?</h3>
+          <span class="badge badge-pure">Zero</span>
+        </div>
+        <p class="desc">A simple daily routine checker. Data is stored only in your browser (localStorage), never sent anywhere. A quiet companion for building habits.</p>
+        <nav class="tool-links">
+          <a href="https://hajimetwi3.github.io/misc/tools/yatta/">Open →</a>
+          <a href="https://note.com/hajimetwi3/n/n3dc77378c5c4">note</a>
+          <a href="https://github.com/hajimetwi3/misc/tree/main/docs/tools/yatta">GitHub</a>
+        </nav>
+      </article>
+
+      <!-- Tsui board -->
+      <article class="tool">
+        <div class="tool-head">
+          <h3>Tsui board</h3>
+          <span class="badge badge-pure">Zero</span>
+        </div>
+        <p class="desc">A casual web whiteboard that keeps your strokes on-device. PWA-ready.</p>
+        <nav class="tool-links">
+          <a href="https://hajimetwi3.github.io/tsui-board/">Open →</a>
+          <a href="https://github.com/hajimetwi3/tsui-board/">GitHub</a>
+        </nav>
+      </article>
+
+      <!-- Tsui keys -->
+      <article class="tool">
+        <div class="tool-head">
+          <h3>Tsui keys</h3>
+          <span class="badge badge-pure">Zero</span>
+        </div>
+        <p class="desc">A local password manager that runs entirely in your browser. No outbound traffic, no accounts, no sync.</p>
+        <nav class="tool-links">
+          <a href="https://tsuikeys.pages.dev/">Open →</a>
+          <a href="https://github.com/hajimetwi3/Tsui-keys/releases/latest">Download →</a>
+          <a href="https://note.com/hajimetwi3/n/nece01928dc72">note</a>
+          <a href="https://github.com/hajimetwi3/Tsui-keys">GitHub</a>
+        </nav>
+      </article>
+
+      <!-- Tsui Vim -->
+      <article class="tool">
+        <div class="tool-head">
+          <h3>Tsui Vim</h3>
+          <span class="badge badge-pure">Zero</span>
+        </div>
+        <p class="desc">A browser-based local file editor with a shell-like + vi/Vim-like interface. No outbound traffic, no accounts, no sync.</p>
+        <nav class="tool-links">
+          <a href="https://tsuivim.pages.dev/">Open →</a>
+          <a href="https://github.com/hajimetwi3/Tsui-vim/releases/latest">Download →</a>
+          <a href="https://github.com/hajimetwi3/Tsui-vim/">GitHub</a>
+        </nav>
+      </article>
+
+      <!-- Tsui Dot -->
+      <article class="tool">
+        <div class="tool-head">
+          <h3>Tsui Dot</h3>
+          <span class="badge badge-pure">Zero</span>
+        </div>
+        <p class="desc">A browser-based 2D pixel-art converter. No network, no accounts, no sync, no ads, free. You can also convert from your camera. The small-window display mode is fun too.</p>
+        <nav class="tool-links">
+          <a href="https://tsuidot.pages.dev/">Open →</a>
+          <a href="https://github.com/hajimetwi3/Tsui-dot/">GitHub</a>
+        </nav>
+      </article>
+
+      <!-- Coming soon -->
+      <article class="tool coming-soon" aria-label="coming soon">
+        <div class="tool-head">
+          <h3>Tsui Chat Cockpit</h3>
+          <span class="badge badge-wip">soon</span>
+        </div>
+        <p class="desc">An AI cockpit "piloted by humans." Building it, maybe?</p>
+        <nav class="tool-links">
+          <span>stay tuned</span>
+        </nav>
+      </article>
+
+
+      <!-- Coming soon -->
+      <article class="tool coming-soon" aria-label="coming soon">
+        <div class="tool-head">
+          <h3>coming soon</h3>
+          <span class="badge badge-wip">soon</span>
+        </div>
+        <p class="desc">Building the next tool.</p>
+        <nav class="tool-links">
+          <span>stay tuned</span>
+        </nav>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ========== Tier 02: Tsui+ ========== -->
+  <section class="tier plus">
+    <div class="tier-header">
+      <span class="tier-num">02</span>
+      <h2>Tsui<span class="plus-sign">+</span></h2>
+      <span class="tier-meta">minimal network · transparent</span>
+    </div>
+    <p class="tier-desc">
+      Only the network calls strictly required for functionality. Each tool discloses its endpoints and what flows in and out. That's Tsui+.
+    </p>
+
+    <div class="tools">
+
+      <!-- IP Info (showip) -->
+      <article class="tool">
+        <div class="tool-head">
+          <h3>IP Info</h3>
+          <span class="badge badge-plus">Two</span>
+        </div>
+        <p class="desc">Shows your public IP and related info (ASN, city, timezone, connection details, and more). Fetched only for display — never stored or analyzed. Includes a simple speed test. Available in Japanese and English.</p>
+        <dl class="transparency">
+          <dt>endpoint</dt><dd>Cloudflare Worker + icanhazip</dd>
+          <dt>fetches</dt><dd>IP / ASN / geo / network info</dd>
+          <dt>storage</dt><dd>none (display only, nothing stored)</dd>
+        </dl>
+        <nav class="tool-links">
+          <a href="https://hajimetwi3.github.io/hajimetwi3/tools/showip.html">Open (JP) →</a>
+          <a href="https://hajimetwi3.github.io/hajimetwi3/tools/showip.en.html">Open (EN) →</a>
+          <a href="https://note.com/hajimetwi3/n/nf5467f5481ae">note</a>
+          <a href="https://github.com/hajimetwi3/hajimetwi3/blob/main/docs/tools/showip.md">GitHub</a>
+        </nav>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ========== Tier 03: Tsui~ ========== -->
+  <section class="tier tilde">
+    <div class="tier-header">
+      <span class="tier-num">03</span>
+      <h2>Tsui<span class="tilde-sign">~</span></h2>
+      <span class="tier-meta">no purpose · transparent</span>
+    </div>
+    <p class="tier-desc">
+      Tools that aren't trying to be useful — they just exist. Ads and tracking remain at zero.
+    </p>
+
+    <div class="tools">
+
+      <!-- Tsui Lume -->
+      <article class="tool">
+        <div class="tool-head">
+          <h3>Tsui Lume</h3>
+          <span class="badge badge-tilde">Zero</span>
+        </div>
+        <p class="desc">Particles of light drifting in deep darkness. They gather, scatter, and spin on whim, sometimes lining up into letters or shapes. A small universe to keep in the corner of your screen.</p>
+        <nav class="tool-links">
+          <a href="https://hajimetwi3.github.io/Tsui-Lume/">Open →</a>
+          <a href="https://github.com/hajimetwi3/tsui-lume">GitHub</a>
+        </nav>
+      </article>
+
+      <!-- Tsui Pond -->
+      <article class="tool">
+        <div class="tool-head">
+          <h3>Tsui Pond</h3>
+          <span class="badge badge-tilde">Zero</span>
+        </div>
+        <p class="desc">A pond where vaguely-defined creatures swim. They breed, fight, and sometimes die from epidemics. There is no point. Just watch — or release some and observe.</p>
+        <nav class="tool-links">
+          <a href="https://hajimetwi3.github.io/Tsui-Pond/">Open →</a>
+          <a href="https://github.com/hajimetwi3/tsui-pond">GitHub</a>
+        </nav>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ========== Footer ========== -->
+  <footer>
+    <span>by <a href="https://hajimetwi3.github.io/hajimetwi3/">hajimetwi3</a></span>
+    <span>tools offline-capable · all traffic disclosed</span>
+  </footer>
+
+  <!-- ========== Analytics disclosure ========== -->
+  <aside class="analytics-note" aria-label="analytics disclosure">
+    <span class="label">// disclosure</span>
+    <strong style="color:var(--fg-dim)">No analytics are embedded in the Tsui / Tsui+ / Tsui~ tools themselves.</strong>
+    This landing page and the author's profile pages use Cloudflare Web Analytics to track visit counts only (no cookies, no fingerprinting, no cross-site tracking). Note that the hosting platform (CDN, ISP, etc.) may also log activity independently.<br><br>
+    These tools are designed with safety and privacy in mind, but browser extensions operate outside the tools' control. This is the same condition as visiting any website that handles sensitive data — the risk profile is identical to opening any other site. That said, when you download and open a tool locally, extensions tend to be less active and have less impact.<br><br>
+    This service is provided as-is, with no guarantee of operation. The author assumes no responsibility for any damage arising from its use. Use at your own risk.
+
+  </aside>
+
+</div>
+
+<script>
+  // Neon theme switcher — Tsui Clock compatible palette, session-only (no residue)
+  (function(){
+    var buttons = document.querySelectorAll('.theme-switch button');
+    buttons.forEach(function(btn){
+      btn.addEventListener('click', function(){
+        var theme = btn.dataset.theme;
+        if (theme === 'calm') {
+          document.documentElement.removeAttribute('data-theme');
+        } else {
+          document.documentElement.dataset.theme = theme;
+        }
+        buttons.forEach(function(b){
+          b.classList.toggle('active', b === btn);
+        });
+      });
+    });
+  })();
+
+  // Font size switcher — S / M(default) / L / XL, session-only (no residue)
+  (function(){
+    var buttons = document.querySelectorAll('.size-switch button');
+    buttons.forEach(function(btn){
+      btn.addEventListener('click', function(){
+        document.documentElement.dataset.size = btn.dataset.size;
+        buttons.forEach(function(b){
+          b.classList.toggle('active', b === btn);
+        });
+      });
+    });
+  })();
+</script>
+<!-- This page is itself Tsui-compliant: no ads, no cookies, no fingerprinting. -->
+<!-- Cloudflare Web Analytics (this landing page only, visit counts and country level) -->
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "219971a8b25d4506877afc0a72110eb1"}'></script>
+</body>
+</html>

@@ -29,6 +29,7 @@ Git: [https://git-scm.com/](https://git-scm.com/)
 Node.js: [https://nodejs.org](https://nodejs.org)  
 Docker: [https://www.docker.com/](https://www.docker.com/)  
 Chromium: [https://www.chromium.org/Home](https://www.chromium.org/Home)  
+7-zip: [https://www.7-zip.org/](https://www.7-zip.org/)  
 
 ## Search  
 [https://www.google.com/](https://www.google.com/)  
@@ -47,7 +48,7 @@ Chromium: [https://www.chromium.org/Home](https://www.chromium.org/Home)
 [https://archive.ph/](https://archive.ph/)  
 
 ## WebTools  
-[**Tsui series**](https://hajimetwi3.github.io/hajimetwi3/Tsui-series/) ( Editor / Clock / QR / Yatta? / IP Info )  
+[**Tsui series**](https://hajimetwi3.github.io/hajimetwi3/Tsui-series/) ( Editor / Clock / QR / Yatta? / IP Info / keys)  
 [market-charts](https://hajimetwi3.github.io/misc/tools/market-charts/)  
 
 ---  

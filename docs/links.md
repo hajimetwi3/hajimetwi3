@@ -30,6 +30,7 @@ Node.js: [https://nodejs.org](https://nodejs.org)
 Docker: [https://www.docker.com/](https://www.docker.com/)  
 Chromium: [https://www.chromium.org/Home](https://www.chromium.org/Home)  
 7-zip: [https://www.7-zip.org/](https://www.7-zip.org/)  
+Blender: [https://www.blender.org/download/](https://www.blender.org/download/)  
 
 ## Search  
 [https://www.google.com/](https://www.google.com/)  

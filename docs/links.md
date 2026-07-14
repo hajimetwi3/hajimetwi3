@@ -3,6 +3,7 @@
 ## AI  
 [https://claude.ai/](https://claude.ai/)  
 [https://chatgpt.com/](https://chatgpt.com/)  
+[https://chatgpt.com/ja-JP/download/](https://chatgpt.com/ja-JP/download/)  
 [https://grok.com/](https://grok.com/)  
 [https://gemini.google.com/](https://gemini.google.com/)  
 [https://ai.rakuten.co.jp/chat](https://ai.rakuten.co.jp/chat)  

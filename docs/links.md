@@ -54,6 +54,7 @@ Windows 11 Enterprise(Evaluation version): [https://www.microsoft.com/ja-jp/eval
 ## WebTools  
 [**Tsui series**](https://hajimetwi3.github.io/hajimetwi3/Tsui-series/) ( Editor / Clock / QR / Yatta? / IP Info / keys)  
 [market-charts](https://hajimetwi3.github.io/misc/tools/market-charts/)  
+brain training Tool: [https://tsuibraintraining.pages.dev/](https://tsuibraintraining.pages.dev/)  
 
 ---  
 

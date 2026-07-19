@@ -22,6 +22,7 @@
 ## Tools  
   [**Tsui series**](https://hajimetwi3.github.io/hajimetwi3/Tsui-series/) ( Editor / Clock / QR / Yatta? / IP Info )     
   &nbsp;&nbsp; <img src="./docs/images/Tsuiseries_qr1.1.jpg"  width="120">  
+  [MadoMochi](https://github.com/hajimetwi3/MadoMochi)  
   
 ---  
 

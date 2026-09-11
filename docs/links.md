@@ -8,6 +8,7 @@
 [https://gemini.google.com/](https://gemini.google.com/)  
 [https://ai.rakuten.co.jp/chat](https://ai.rakuten.co.jp/chat)  
 [https://chat.sakana.ai/](https://chat.sakana.ai/)  
+[https://suno.com/](https://suno.com/)  
 
 ## Exchange Rates  
 [USDJPY](https://jp.tradingview.com/chart/?symbol=OANDA%3AUSDJPY)  
@@ -35,7 +36,6 @@ Blender: [https://www.blender.org/download/](https://www.blender.org/download/)
 Windows 11 Enterprise(Evaluation version): [https://www.microsoft.com/ja-jp/evalcenter/evaluate-windows-11-enterprise](https://www.microsoft.com/ja-jp/evalcenter/evaluate-windows-11-enterprise)  
 MadoMochi: [https://github.com/hajimetwi3/MadoMochi](https://github.com/hajimetwi3/MadoMochi)  
 
-
 ## Search  
 [https://www.google.com/](https://www.google.com/)  
 [https://www.bing.com/](https://www.bing.com/)  
@@ -43,6 +43,9 @@ MadoMochi: [https://github.com/hajimetwi3/MadoMochi](https://github.com/hajimetw
 ## Portal and News (JP)  
 [https://www.yahoo.co.jp/](https://www.yahoo.co.jp/)  
 [DIAMOND online](https://diamond.jp/)  
+
+## Weather  
+[Rain radar(Yahoo)](https://weather.yahoo.co.jp/weather/zoomradar/)  
 
 ## Portal(US)  
 [https://www.yahoo.com/](https://www.yahoo.com/)  

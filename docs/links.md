@@ -10,20 +10,12 @@
 [https://chat.sakana.ai/](https://chat.sakana.ai/)  
 [https://suno.com/](https://suno.com/)  
 
-## Exchange Rates  
-[USDJPY](https://jp.tradingview.com/chart/?symbol=OANDA%3AUSDJPY)  
+## WebTools  
+[**Tsui series**](https://hajimetwi3.github.io/hajimetwi3/Tsui-series/) ( Editor / Clock / QR / Yatta? / IP Info / keys)  
+brain training Tool: [https://tsuibraintraining.pages.dev/](https://tsuibraintraining.pages.dev/)  
 
-## Indices  
-[TVC:DJI](https://jp.tradingview.com/chart/?symbol=TVC%3ADJI)  
-[SP:SPX](https://jp.tradingview.com/chart/?symbol=SP%3ASPX)  
-[NASDAQ:IXIC](https://jp.tradingview.com/chart/?symbol=NASDAQ%3AIXIC)  
-[NK2251!](https://jp.tradingview.com/chart/?symbol=NK2251%21)  
-[TOPIX](https://jp.tradingview.com/chart/?symbol=TSE%3ATOPIX)  
-
-## Commodities  
-[Gold](https://jp.tradingview.com/chart/?symbol=OANDA%3AXAUJPY)  
-[Silver](https://jp.tradingview.com/chart/?symbol=OANDA%3AXAGJPY)  
-[USOIL](https://jp.tradingview.com/chart/?symbol=TVC%3AUSOIL)  
+## Exchange Rates / Indices / Commodities  
+[market-charts](https://hajimetwi3.github.io/misc/tools/market-charts/)  
 
 ## Tools  
 Visual Studio Code: [https://code.visualstudio.com/](https://code.visualstudio.com/)  
@@ -55,10 +47,7 @@ MadoMochi: [https://github.com/hajimetwi3/MadoMochi](https://github.com/hajimetw
 [https://ghostarchive.org/](https://ghostarchive.org/)  
 [https://archive.ph/](https://archive.ph/)  
 
-## WebTools  
-[**Tsui series**](https://hajimetwi3.github.io/hajimetwi3/Tsui-series/) ( Editor / Clock / QR / Yatta? / IP Info / keys)  
-[market-charts](https://hajimetwi3.github.io/misc/tools/market-charts/)  
-brain training Tool: [https://tsuibraintraining.pages.dev/](https://tsuibraintraining.pages.dev/)  
+
 
 ---  
 

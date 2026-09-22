@@ -5,6 +5,7 @@
 [https://chatgpt.com/](https://chatgpt.com/)  
 [https://chatgpt.com/ja-JP/download/](https://chatgpt.com/ja-JP/download/)  
 [https://grok.com/](https://grok.com/)  
+[https://docs.x.ai/build/overview](https://docs.x.ai/build/overview)  
 [https://gemini.google.com/](https://gemini.google.com/)  
 [https://ai.rakuten.co.jp/chat](https://ai.rakuten.co.jp/chat)  
 [https://chat.sakana.ai/](https://chat.sakana.ai/)  

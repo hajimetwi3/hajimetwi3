@@ -13,6 +13,7 @@
 
 ## WebTools  
 [**Tsui series**](https://hajimetwi3.github.io/hajimetwi3/Tsui-series/) ( Editor / Clock / QR / Yatta? / IP Info / keys)  
+[Tsui HTML Viewer](https://tsuihtmlviewer.pages.dev/)  
 brain training Tool: [https://tsuibraintraining.pages.dev/](https://tsuibraintraining.pages.dev/)  
 
 ## Exchange Rates / Indices / Commodities  

@@ -55,7 +55,13 @@ MadoMochi: [https://github.com/hajimetwi3/MadoMochi](https://github.com/hajimetw
 [https://ghostarchive.org/](https://ghostarchive.org/)  
 [https://archive.ph/](https://archive.ph/)  
 
+## shopping(JP)  
+[https://www.rakuten.co.jp/](https://www.rakuten.co.jp/)  
+[https://www.amazon.co.jp/](https://www.amazon.co.jp/)  
 
+## Game  
+[https://my.nintendo.com/](https://my.nintendo.com/)  
+[https://www.playstation.com/ja-jp/](https://www.playstation.com/ja-jp/)  
 
 ---  
 

@@ -7,6 +7,7 @@
 [https://grok.com/](https://grok.com/)  
 [https://docs.x.ai/build/overview](https://docs.x.ai/build/overview)  
 [https://gemini.google.com/](https://gemini.google.com/)  
+[https://muse.ai/](https://muse.ai/)  
 [https://ai.rakuten.co.jp/chat](https://ai.rakuten.co.jp/chat)  
 [https://chat.sakana.ai/](https://chat.sakana.ai/)  
 [https://suno.com/](https://suno.com/)  
